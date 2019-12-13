@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.hoggen.sublimation.dao.FriendshipDao">
+
+
+
+    <resultMap type="com.hoggen.sublimation.entity.Friendship" id="FriendshipMap">
+        <id property="id" column="id" />
+        <result property="userId" column="user_id" />
+        <result property="friendId" column="friend_id" />
+        <result property="applyId" column="apply_id" />
+    </resultMap>
+
+
+
+    <insert id="insertFriendship" parameterType="com.hoggen.sublimation.entity.Friendship"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+
+        <selectKey  keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select uuid()
+        </selectKey>
+        <!--<selectKey keyProperty="userId" order="AFTER" resultType="java.lang.String">-->
+        <!--&lt;!&ndash; SELECT LAST_INSERT_ID()：得到刚insert到数据表中的记录的主键值，只适用于自增主键 &ndash;&gt;-->
+        <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        INSERT INTO
+        tb_black_friendship(
+        id,
+        user_id,
+        friend_id,
+        create_time)
+        VALUES
+        (#{id},#{userId},#{friendId},#{createTime})
+    </insert>
+
+
+    <select id="queryFriendShipList" resultMap="FriendshipMap">
+            SELECT
+            id,
+            user_id,
+            friend_id
+            FROM
+            tb_black_friendship
+            WHERE 1=1
+        AND
+        delete_status=0
+        and
+        user_id =
+        #{userId}
+
+    </select>
+
+
+
+</mapper>
