@@ -46,7 +46,7 @@ public class JwtUtil {
 			return token;
 
 		} catch (Exception e) {
-			return null;
+			return "";
 		}
 	}
 
@@ -58,7 +58,7 @@ public class JwtUtil {
 			DecodedJWT jwt = JWT.decode(token);
 			return jwt.getClaim("userId").asString();
 		} catch (Exception e) {
-			return null;
+			return "";
 			// TODO: handle exception
 		}
 	}
@@ -71,7 +71,7 @@ public class JwtUtil {
 			DecodedJWT jwt = JWT.decode(token);
 			return jwt.getClaim("mobile").asString();
 		} catch (Exception e) {
-			return null;
+			return "";
 			// TODO: handle exception
 		}
 	}

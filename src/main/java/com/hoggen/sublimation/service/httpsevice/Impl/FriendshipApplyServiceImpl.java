@@ -1,9 +1,7 @@
 package com.hoggen.sublimation.service.httpsevice.Impl;
 
 import com.hoggen.sublimation.dao.FriendshipApplyDao;
-import com.hoggen.sublimation.dao.FriendshipDao;
 import com.hoggen.sublimation.dto.FriendshipDTO;
-import com.hoggen.sublimation.entity.Friendship;
 import com.hoggen.sublimation.entity.FriendshipApply;
 import com.hoggen.sublimation.service.httpsevice.FriendshipApplyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +34,13 @@ public class FriendshipApplyServiceImpl implements FriendshipApplyService {
     }
 
     @Override
-    public FriendshipDTO queryUserList(String userId) {
+    public List<FriendshipDTO> queryUserList(String userId) {
         return applyDao.queryUserList(userId);
+    }
+
+    @Override
+    public List<FriendshipDTO> queryApplyUserList(String userId) {
+        return applyDao.queryApplyUserList(userId);
     }
 
     @Override

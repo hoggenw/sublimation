@@ -70,11 +70,11 @@ public class DESUtils {
 
 	public static void main(String[] args) {
 		System.out.println("账号：  " + getEncryptString("root"));
-		System.out.println("密码：  " + getEncryptString("12345678"));
+		System.out.println("密码：  " + getEncryptString("Xinjin_611430"));
 		// System.out.println(getEncryptString("wxd7f6c5b8899fba83"));
 		// System.out.println(getEncryptString("665ae80dba31fc91ab6191e7da4d676d"));cmpjUf4dIIIfJAfVsP+M2w==
 		System.out.println("解码账号：  " + getDecryptString("WnplV/ietfQ="));
-		System.out.println("解码密码：  " + getDecryptString("d0iM1qq5PF4fJAfVsP+M2w=="));
+		System.out.println("解码密码：  " + getDecryptString("Vx4uJc2qZfJJnjkHs26fsw=="));
 
 	}
 }

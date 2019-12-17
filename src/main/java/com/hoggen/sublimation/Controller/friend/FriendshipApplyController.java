@@ -2,19 +2,14 @@ package com.hoggen.sublimation.Controller.friend;
 
 
 import com.hoggen.sublimation.dto.FriendshipDTO;
-import com.hoggen.sublimation.dto.RegisterDTO;
-import com.hoggen.sublimation.dto.ReturnUserDTO;
-import com.hoggen.sublimation.dto.UserExecution;
-import com.hoggen.sublimation.entity.Friendship;
+import com.hoggen.sublimation.entity.BlackFriendship;
 import com.hoggen.sublimation.entity.FriendshipApply;
-import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.UserStateEnum;
 import com.hoggen.sublimation.service.httpsevice.FriendshipApplyService;
-import com.hoggen.sublimation.service.httpsevice.FriendshipService;
+import com.hoggen.sublimation.service.httpsevice.BlackFriendshipService;
 import com.hoggen.sublimation.util.ResponedUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,34 +31,29 @@ public class FriendshipApplyController {
     private FriendshipApplyService applyService;
 
     @Autowired
-    private FriendshipService friendshipService;
+    private BlackFriendshipService blackFriendshipService;
 
 
-    @RequestMapping(value = "/applyList", method = RequestMethod.GET)
-    @ApiOperation(value = "待添加好友好友列表")
-    @ResponseBody
-    private Map<String, Object> applyList( HttpServletRequest request){
-        String userId = request.getHeader("userId");
-        FriendshipDTO friendshipDTO = applyService.queryUserList(userId);
-        Map<String, Object> modelMap = new HashMap<String, Object>();
-        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),friendshipDTO);
-
-    }
 
     @RequestMapping(value = "/addBlack", method = RequestMethod.POST)
     @ApiOperation(value = "添加好友黑名单")
     @ResponseBody
-    private Map<String, Object> addBlack( @Validated @RequestBody Friendship apply){
+    private Map<String, Object> addBlack(HttpServletRequest request, @Validated @RequestBody BlackFriendship apply){
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        List<Friendship> friendships = friendshipService.queryFriendShipList(apply.getUserId());
-        for (Friendship model: friendships) {
+        String userId = request.getHeader("userId");
+        if (!apply.getUserId().equals(userId)){
+            return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),modelMap);
+
+        }
+        List<BlackFriendship> blackFriendships = blackFriendshipService.queryFriendShipList(apply.getUserId());
+        for (BlackFriendship model: blackFriendships) {
             if (model.getFriendId().equals(apply.getFriendId())){
                 return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPBLACKALLREADY.getState(),UserStateEnum.FRIENDSHIPBLACKALLREADY.getStateInfo(),modelMap);
             }
         }
         apply.setCreateTime(new Date());
         apply.setDeleteStatus(0);
-        int effcet = friendshipService.insertFriendship(apply);
+        int effcet = blackFriendshipService.insertFriendship(apply);
         if (effcet < 0){
             return ResponedUtils.returnCode(UserStateEnum.INNER_ERROR.getState(),UserStateEnum.INNER_ERROR.getStateInfo(),modelMap);
 
@@ -71,16 +61,87 @@ public class FriendshipApplyController {
 
         return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),modelMap);
 
+    }
 
+    @RequestMapping(value = "/blackList", method = RequestMethod.GET)
+    @ApiOperation(value = "黑名单列表")
+    @ResponseBody
+    private Map<String, Object> blackList(HttpServletRequest request){
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        String userId = request.getHeader("userId");
+
+        List<FriendshipDTO>  blackFriendships = blackFriendshipService.queryBlackUserList(userId);
+
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),blackFriendships);
 
     }
+
+    @RequestMapping(value = "/blackDelete", method = RequestMethod.POST)
+    @ApiOperation(value = "移除黑名单中的某个对象")
+    @ResponseBody
+    private Map<String, Object> blackDelete(HttpServletRequest request,@Validated @RequestBody BlackFriendship blackFriendship){
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        String userId = request.getHeader("userId");
+        if (!blackFriendship.getUserId().equals(userId)){
+            return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),modelMap);
+
+        }
+        BlackFriendship blackship =  blackFriendshipService.queryBlackFriendship(blackFriendship.getId());
+        if (blackship == null ){
+            return ResponedUtils.returnCode(UserStateEnum.BLACKNULL.getState(),UserStateEnum.BLACKNULL.getStateInfo(),modelMap);
+        }
+
+        blackship.setDeleteStatus(1);
+        int effect = blackFriendshipService.deleteFriendship(blackship);
+        if (effect < 0){
+            //
+            return ResponedUtils.returnCode(UserStateEnum.INNER_ERROR.getState(),UserStateEnum.INNER_ERROR.getStateInfo(),modelMap);
+        }
+
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),modelMap);
+
+    }
+
+
+    @RequestMapping(value = "/applyList", method = RequestMethod.GET)
+    @ApiOperation(value = "待添加好友好友列表")
+    @ResponseBody
+    private Map<String, Object> applyList( HttpServletRequest request){
+        String userId = request.getHeader("userId");
+
+        List<FriendshipDTO> friendshipDTOs = applyService.queryApplyUserList(userId);
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),friendshipDTOs!=null?friendshipDTOs:modelMap);
+
+    }
+
+    @RequestMapping(value = "/friedsList", method = RequestMethod.GET)
+    @ApiOperation(value = "好友列表")
+    @ResponseBody
+    private Map<String, Object> freidsList( HttpServletRequest request){
+        String userId = request.getHeader("userId");
+        List<FriendshipDTO> friendshipDTOs = applyService.queryUserList(userId);
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),friendshipDTOs!=null?friendshipDTOs:modelMap);
+
+    }
+
+
 
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ApiOperation(value = "好友关系确认")
     @ResponseBody
-    private Map<String, Object> add( @Validated @RequestBody FriendshipApply apply){
+    private Map<String, Object> add(HttpServletRequest request, @Validated @RequestBody FriendshipApply apply){
         Map<String, Object> modelMap = new HashMap<String, Object>();
+
+        String userId = request.getHeader("userId");
+        if (!apply.getUserId().equals(userId)){
+            return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),modelMap);
+
+        }
+
         FriendshipApply friendshipApply = applyService.queryFriendshipApply(apply.getId());
         if (friendshipApply == null ){
             return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPEMPTY.getState(),UserStateEnum.FRIENDSHIPEMPTY.getStateInfo(),modelMap);
@@ -105,9 +166,13 @@ public class FriendshipApplyController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ApiOperation(value = "好友删除")
     @ResponseBody
-    private Map<String, Object> delete( @Validated @RequestBody FriendshipApply apply)  {
-
+    private Map<String, Object> delete(HttpServletRequest request,@Validated @RequestBody FriendshipApply apply)  {
         Map<String, Object> modelMap = new HashMap<String, Object>();
+        String userId = request.getHeader("userId");
+        if (!(apply.getUserId().equals(userId))){
+            return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),modelMap);
+
+        }
         FriendshipApply friendshipApply = applyService.queryFriendshipApply(apply.getId());
         if (friendshipApply == null ){
             return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPEMPTY.getState(),UserStateEnum.FRIENDSHIPEMPTY.getStateInfo(),modelMap);
@@ -132,18 +197,23 @@ public class FriendshipApplyController {
     @RequestMapping(value = "/creat", method = RequestMethod.POST)
     @ApiOperation(value = "好友申请")
     @ResponseBody
-    private Map<String, Object> createApply( @Validated @RequestBody FriendshipApply apply)  {
+    private Map<String, Object> createApply( HttpServletRequest request, @Validated @RequestBody FriendshipApply apply)  {
         Map<String, Object> modelMap = new HashMap<String, Object>();
+        String userId = request.getHeader("userId");
+        if (!apply.getUserId().equals(userId)){
+            return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),modelMap);
+
+        }
         //判断黑名单
-        List<Friendship> friendships = friendshipService.queryFriendShipList(apply.getFriendId());
-        for (Friendship model: friendships) {
+        List<BlackFriendship> blackFriendships = blackFriendshipService.queryFriendShipList(apply.getFriendId());
+        for (BlackFriendship model: blackFriendships) {
             if (model.getFriendId().equals(apply.getUserId())){
                 return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPBLACKALLREADY.getState(),UserStateEnum.FRIENDSHIPBLACKALLREADY.getStateInfo(),modelMap);
             }
         }
         //
-        List<Friendship> friendships2 = friendshipService.queryFriendShipList(apply.getUserId());
-        for (Friendship model: friendships2) {
+        List<BlackFriendship> friendships2 = blackFriendshipService.queryFriendShipList(apply.getUserId());
+        for (BlackFriendship model: friendships2) {
             if (model.getFriendId().equals(apply.getFriendId())){
                 return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPBLACKALLREADY.getState(),UserStateEnum.FRIENDSHIPBLACKALLREADY.getStateInfo(),modelMap);
             }

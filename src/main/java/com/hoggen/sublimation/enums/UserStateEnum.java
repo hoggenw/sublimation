@@ -22,8 +22,9 @@ public enum UserStateEnum {
     AGREEALREADY(10016, "该好友已经添加"),
     FRIENDSHIPEMPTY(10017, "该好友关系不存在,或者被删除"),
     FRIENDSHIPILLEGAL(10018, "用户角色非法"),
-    FRIENDSHIPBLACKALLREADY(10019, "该用户已经在您的黑名单中,或者你已经在对方黑名单中");
-
+    FRIENDSHIPBLACKALLREADY(10019, "该用户已经在您的黑名单中,或者你已经在对方黑名单中"),
+    APPLYINFOREERO(10020, "请检查申请参数是否正确"),
+    BLACKNULL(10021, "不在黑名单中");
 
     private int state;
 

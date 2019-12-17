@@ -45,7 +45,7 @@ public class LoginServiceImpl implements LoginService {
         User user = userService.queryByUserName(phone);
         Map<String, Object> modelMap = new HashMap<String, Object>();
         Map<String, Object> modelMapData = new HashMap<String, Object>();
-        if (user != null && user.getStatus() == 1) {
+        if (user != null && user.getStatus() == 0) {
             return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(),LoginStateEnum.EMPTY.getStateInfo(),modelMapData);
         }
         if (user != null && user.getPassword() != null) {

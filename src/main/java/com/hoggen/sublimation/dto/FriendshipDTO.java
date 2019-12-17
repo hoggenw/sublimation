@@ -27,6 +27,8 @@ public class FriendshipDTO {
 //    //是否已经删除
 //    private Integer delete;
 
-    private List<UserModelDTO> users;
+    private UserModelDTO user;
+
+    private UserModelDTO friend;
 
 }

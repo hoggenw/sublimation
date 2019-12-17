@@ -1,12 +1,9 @@
 package com.hoggen.sublimation.dao;
 
 import com.hoggen.sublimation.dto.FriendshipDTO;
-import com.hoggen.sublimation.dto.ReturnUserDTO;
-import com.hoggen.sublimation.entity.Friendship;
 import com.hoggen.sublimation.entity.FriendshipApply;
 
 import java.util.List;
-import java.util.Map;
 
 public interface FriendshipApplyDao {
     /**
@@ -36,16 +33,25 @@ public interface FriendshipApplyDao {
 
 
     /**
-     * 获取朋友列表
+     * 获取已经添加成功的朋友列表
      * @Param null
      * @Author:hoggen
      * @Date:11:22 2019-11-25
      */
-    public FriendshipDTO queryUserList(String userId);
+    public List<FriendshipDTO> queryUserList(String userId);
 
 
     /**
-     * 获取朋友列表
+     * 获取未成功的朋友列表
+     * @Param null
+     * @Author:hoggen
+     * @Date:11:22 2019-11-25
+     */
+    public List<FriendshipDTO> queryApplyUserList(String userId);
+
+
+    /**
+     * 获取所有朋友列表（包括添加成功和带添加的）
      * @Param null
      * @Author:hoggen
      * @Date:11:22 2019-11-25

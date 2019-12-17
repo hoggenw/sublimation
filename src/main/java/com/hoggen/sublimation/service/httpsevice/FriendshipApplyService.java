@@ -29,7 +29,15 @@ public interface FriendshipApplyService {
      * @Author:hoggen
      * @Date:11:22 2019-11-25
      */
-    public FriendshipDTO queryUserList(String userId);
+    public List<FriendshipDTO> queryUserList(String userId);
+
+    /**
+     * 获取未成功的朋友列表
+     * @Param null
+     * @Author:hoggen
+     * @Date:11:22 2019-11-25
+     */
+    public List<FriendshipDTO> queryApplyUserList(String userId);
 
 
     /**

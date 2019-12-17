@@ -46,7 +46,7 @@ public class RedisService {
     public  String getTokenStringForJudge(String userId ,String token ){
 
         String midString =  (String)get(userId);
-        if (midString.length() <= 0 || midString == null){
+        if ( midString == null){
             return "";
         }
 
