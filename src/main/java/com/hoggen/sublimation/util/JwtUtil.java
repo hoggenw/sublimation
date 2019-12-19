@@ -1,9 +1,11 @@
 package com.hoggen.sublimation.util;
 
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,8 +41,9 @@ public class JwtUtil {
 			Map<String, Object> header = new HashMap<>();
 			header.put("typ", "JWT");
 			header.put("alg", "HS256");
+			String time = String.valueOf( System.currentTimeMillis());
 			String token = JWT.create().withHeader(header).withClaim("loginName", username).withClaim("userId", userId)
-					.withClaim("mobile", mobile).withIssuedAt(new Date()).withExpiresAt(date).sign(algorithm);
+					.withClaim("mobile", mobile).withClaim("time",time ).withIssuedAt(new Date()).withExpiresAt(date).sign(algorithm);
 			//System.out.println(token);
 
 			return token;
@@ -62,6 +65,7 @@ public class JwtUtil {
 			// TODO: handle exception
 		}
 	}
+
 
 	/**
 	 * 获取loginType

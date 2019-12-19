@@ -90,16 +90,10 @@ public class LoginServiceImpl implements LoginService {
     public Map<String, Object> userInfo(HttpServletRequest request) {
         logger.info("userInfo");
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        Map<String, Object> modelMapData = new HashMap<String, Object>();
-        String token = request.getHeader("token");
+        String userId = request.getHeader("userId");
         // 根据账号  查找运输人id
-        User user = userService.queryByUserId(JwtUtil.getLoginUserID(token));
+        User user = userService.queryByUserId(userId);
         if(user != null ){
-
-            modelMapData.put("roleType",user.getRoleType());
-            modelMapData.put("userId",user.getUserId());
-            modelMapData.put("token",token);
-
         }else {
             return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(), LoginStateEnum.EMPTY.getStateInfo(), new HashMap<>());
         }
@@ -107,7 +101,7 @@ public class LoginServiceImpl implements LoginService {
 
         modelMap.put("errno", "0");
         modelMap.put("errmsg", "操作成功");
-        modelMap.put("data", modelMapData);
+        modelMap.put("data", user);
         return modelMap;
     }
 

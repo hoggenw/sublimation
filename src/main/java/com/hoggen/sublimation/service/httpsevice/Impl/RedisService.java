@@ -38,22 +38,19 @@ public class RedisService {
             return  returnString;
         }
         returnString = String.valueOf(result[2]);
-        String midString =  String.valueOf(result[1]);
-        if (set(userId,midString )){
+        if (set(userId,returnString )){
             return  returnString;
         }
-        return  returnString;
+        return  null;
 
     }
 
-    public  String getTokenStringForJudge(String userId ,String token ){
+    public  String getTokenStringForJudge(String userId ){
 
-        String midString =  (String)get(userId);
-        if ( midString == null){
+        String returnString =  (String)get(userId);
+        if ( returnString == null){
             return "";
         }
-
-        String returnString = header + "." + midString + "." + token;
         return  returnString;
 
     }
@@ -74,15 +71,11 @@ public class RedisService {
     public  Boolean ifLogin(String userId,String token ){
 
         if (exists(userId)){
-            String middleString =  String.valueOf(get(userId));
-            if (middleString.length() <= 0){
+            String saveToken =  String.valueOf(get(userId));
+            if (saveToken.length() <= 0){
                 return  false;
             }
-
-            String signToken = header+"."+middleString+"."+token;
-            String signUserId = JwtUtil.getLoginUserID(signToken);
-
-            return  signUserId.equals(userId);
+            return  token.equals(saveToken);
         }else  {
             return  false;
         }

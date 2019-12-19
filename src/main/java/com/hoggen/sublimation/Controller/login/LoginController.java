@@ -103,7 +103,6 @@ public class LoginController {
     @ResponseBody
     private Map<String, Object> quit(@Validated @RequestBody QuitDTO quitDTO)  {
 
-
         return loginService.quit(quitDTO);
     }
 

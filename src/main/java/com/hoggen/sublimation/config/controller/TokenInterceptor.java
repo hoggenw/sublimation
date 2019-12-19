@@ -47,11 +47,10 @@ public class TokenInterceptor implements HandlerInterceptor {
             response.flushBuffer();
             return false;
         }
-        String realToken = redisService.getTokenStringForJudge(userId,token);
-        String userid = JwtUtil.getLoginUserID(realToken);
-        if ( !userid.equals(userId) ) {
+        String realToken = redisService.getTokenStringForJudge(userId);
+        if ( !token.equals(realToken) ) {
             modelMap.put("errno", "-10001");
-            modelMap.put("errmsg", "非法用户");
+            modelMap.put("errmsg", "登录已过期");
             modelMap.put("data", modelMapData);
             response.setContentType("application/json; charset=utf-8");
             PrintWriter writer = response.getWriter();
