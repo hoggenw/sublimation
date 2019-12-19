@@ -49,7 +49,7 @@ public class TokenInterceptor implements HandlerInterceptor {
         }
         String realToken = redisService.getTokenStringForJudge(userId);
         if ( !token.equals(realToken) ) {
-            modelMap.put("errno", "-10001");
+            modelMap.put("errno", "10086");
             modelMap.put("errmsg", "登录已过期");
             modelMap.put("data", modelMapData);
             response.setContentType("application/json; charset=utf-8");
