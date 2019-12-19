@@ -56,6 +56,10 @@ public class LoginServiceImpl implements LoginService {
                 String token = JwtUtil.sign(phone, String.valueOf(user.getUserId()),String.valueOf(user.getRoleType()));
 
                 String returnToken =  redisService.saveLoginStatus( String.valueOf(user.getUserId()),token);
+                if (returnToken == null){
+                    return ResponedUtils.returnCode(LoginStateEnum.LOGIN_FAILED.getState(),LoginStateEnum.LOGIN_FAILED.getStateInfo(),modelMapData);
+
+                }
 
                 modelMapData.put("token",returnToken);
                 modelMapData.put("user",new ReturnUserDTO(user));

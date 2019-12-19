@@ -3,6 +3,7 @@ package com.hoggen.sublimation.enums;
 public enum LoginStateEnum {
     USERNONE(11000, "用户名或者密码错误"),
     SUCCESS(0, "操作成功"),
+    LOGIN_FAILED(0, "登录失败"),
     OVERTIME(11001, "登录已过期"),
     NOTLOGIN(11002, "请登录"),
     NOPERMISSION(11003, "没有权限"),

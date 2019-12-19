@@ -42,7 +42,7 @@ public class LoginController {
 
 
     @Autowired
-    private LoginService identifyService;
+    private LoginService loginService;
 
     @Autowired
     private UserService userService;
@@ -59,7 +59,7 @@ public class LoginController {
     @ResponseBody
     private Map<String, Object> userLogin(@Validated @RequestBody LoginDTO loginDTO ) {
 
-        return identifyService.userLogin(loginDTO.getPhone(),loginDTO.getPassword());
+        return loginService.userLogin(loginDTO.getPhone(),loginDTO.getPassword());
     }
 
 
@@ -104,7 +104,7 @@ public class LoginController {
     private Map<String, Object> quit(@Validated @RequestBody QuitDTO quitDTO)  {
 
 
-        return identifyService.quit(quitDTO);
+        return loginService.quit(quitDTO);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)

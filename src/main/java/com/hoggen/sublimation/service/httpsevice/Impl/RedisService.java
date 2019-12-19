@@ -34,6 +34,9 @@ public class RedisService {
 
         String returnString = null;
         String[] result = token.split("\\.");
+        if (result.length < 3){
+            return  returnString;
+        }
         returnString = String.valueOf(result[2]);
         String midString =  String.valueOf(result[1]);
         if (set(userId,midString )){

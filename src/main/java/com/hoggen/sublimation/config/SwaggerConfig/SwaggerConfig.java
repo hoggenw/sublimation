@@ -47,7 +47,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo)
                 .select()
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))  //添加ApiOperiation注解的被扫描
-                .paths(PathSelectors.any())
+                .paths(PathSelectors.any())//PathSelectors.none()可以屏蔽掉文档显示
                 .build();
         watch.stop();
         log.info("Started Swagger in {} ms", watch.getTotalTimeMillis());

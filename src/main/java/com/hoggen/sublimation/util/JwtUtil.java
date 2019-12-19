@@ -40,7 +40,7 @@ public class JwtUtil {
 			header.put("typ", "JWT");
 			header.put("alg", "HS256");
 			String token = JWT.create().withHeader(header).withClaim("loginName", username).withClaim("userId", userId)
-					.withClaim("mobile", mobile).withExpiresAt(date).sign(algorithm);
+					.withClaim("mobile", mobile).withIssuedAt(new Date()).withExpiresAt(date).sign(algorithm);
 			//System.out.println(token);
 
 			return token;

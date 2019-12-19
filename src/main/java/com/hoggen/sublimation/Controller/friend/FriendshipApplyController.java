@@ -112,7 +112,7 @@ public class FriendshipApplyController {
         List<FriendshipDTO> friendshipDTOs = applyService.queryApplyUserList(userId);
         Map<String, Object> modelMap = new HashMap<String, Object>();
 
-        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),friendshipDTOs!=null?friendshipDTOs:modelMap);
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),friendshipDTOs);
 
     }
 
@@ -123,7 +123,7 @@ public class FriendshipApplyController {
         String userId = request.getHeader("userId");
         List<FriendshipDTO> friendshipDTOs = applyService.queryUserList(userId);
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),friendshipDTOs!=null?friendshipDTOs:modelMap);
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),friendshipDTOs);
 
     }
 
