@@ -154,16 +154,16 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
             switch (stateEvent.state()){
                 //读空闲（服务器端）
                 case READER_IDLE:
-                    logger.info("【"+ctx.channel().remoteAddress()+"】读空闲（服务器端）");
+                   // logger.info("【"+ctx.channel().remoteAddress()+"】读空闲（服务器端）");
                     //ctx.writeAndFlush(ping);
                     break;
                 //写空闲（客户端）
                 case WRITER_IDLE:
-                    logger.info("【"+ctx.channel().remoteAddress()+"】写空闲（客户端）");
+                   // logger.info("【"+ctx.channel().remoteAddress()+"】写空闲（客户端）");
                     // ctx.writeAndFlush(ping);
                     break;
                 case ALL_IDLE:
-                    logger.info("【"+ctx.channel().remoteAddress()+"】读写空闲");
+                   // logger.info("【"+ctx.channel().remoteAddress()+"】读写空闲");
                     ChannelFuture writeAndFlush = ctx.channel().writeAndFlush(new TextWebSocketFrame(
                             " you will be close：" + new java.util.Date().toString()));
                     writeAndFlush.addListener(new ChannelFutureListener() {
@@ -181,14 +181,14 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
 
     // 处理HTTP的代码
     private void handleHttpRequest(ChannelHandlerContext ctx, FullHttpRequest req) throws UnsupportedEncodingException {
-        System.out.println("httprequest get" + req);
-        System.out.println("handleHttpRequest method==========" + req.method());
-        System.out.println("handleHttpRequest uri==========" + req.uri());
+//        System.out.println("httprequest get" + req);
+//        System.out.println("handleHttpRequest method==========" + req.method());
+//        System.out.println("handleHttpRequest uri==========" + req.uri());
         // 如果HTTP解码失败，返回HHTP异常
         Map<String, String> parmMap = new HashMap<>();
         if (req instanceof HttpRequest) {
             HttpMethod method = req.method();
-            System.out.println("this is httpconnect" + req.content());
+           // System.out.println("this is httpconnect" + req.content());
             // 如果是websocket请求就握手升级
             String[] splitStrings =  req.uri().split("&");
             String uri;
@@ -199,7 +199,7 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 token = splitStrings[1];
                 userId = splitStrings[2];
                 if (customTextFrameHandler.redisService.ifLogin(userId,token)){
-                    System.out.println("this is token" + token + "  uri " + uri + "  " + userId +  "5. ctx.channel().id " + ctx.channel().id());
+                    //System.out.println("this is token" + token + "  uri " + uri + "  " + userId +  "5. ctx.channel().id " + ctx.channel().id());
                     //这里添加到redis里面ChannelSession
                     Channel saveChannel =  ctx.channel();
                     channelMap.put(userId,saveChannel);

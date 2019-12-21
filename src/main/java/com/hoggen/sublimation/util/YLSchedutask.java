@@ -1,7 +1,6 @@
 package com.hoggen.sublimation.util;
 
 
-import com.hoggen.sublimation.dao.TableDealDao;
 import com.hoggen.sublimation.dao.UserDao;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
