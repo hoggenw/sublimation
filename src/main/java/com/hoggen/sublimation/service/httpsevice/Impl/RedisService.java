@@ -1,11 +1,11 @@
 package com.hoggen.sublimation.service.httpsevice.Impl;
 
 import com.alibaba.fastjson.JSON;
+import com.hoggen.sublimation.config.redis.JedisCache;
 import com.hoggen.sublimation.util.JsonUtil;
 import com.hoggen.sublimation.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisService {
     @Autowired
-    private RedisTemplate redisTemplate;
+    private JedisCache jedisCache;
 
     /**
      * 一周有多少秒
@@ -94,19 +94,7 @@ public class RedisService {
      */
     public boolean set(String key, String value) {
         try {
-            redisTemplate.opsForValue().set(key, value, FOREVER, TimeUnit.SECONDS);
-
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-
-    }
-
-    public boolean setJson(String key, Object value) {
-        try {
-            redisTemplate.opsForValue().set(key, JSON.toJSONString(value), FOREVER, TimeUnit.SECONDS);
+            jedisCache.set(key, value);
 
             return true;
         } catch (Exception e) {
@@ -117,38 +105,9 @@ public class RedisService {
     }
 
 
-    /**
-     * 将 key，value 存放到redis数据库中，设置过期时间单位是秒
-     *
-     * @param key
-     * @param value
-     * @param expireTime
-     */
-    public boolean set(String key, Object value, long expireTime) {
-        try {
-            redisTemplate.opsForValue().set(key, String.valueOf(value) , expireTime, TimeUnit.SECONDS);
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
 
-    }
 
-    /**
-     * 存入多组key value
-     * @param map
-     */
-    public boolean set(Map<String,String> map) {
-        try {
-            redisTemplate.opsForValue().multiSet(map);
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
 
-    }
 
     /**
      * 判断 key 是否在 redis 数据库中
@@ -157,7 +116,7 @@ public class RedisService {
      * @return
      */
     public boolean exists(String key) {
-        return redisTemplate.hasKey(key);
+        return jedisCache.existKey(key);
     }
 
     /**
@@ -181,14 +140,10 @@ public class RedisService {
      * @return
      */
     public Object get(String key) {
-        return  redisTemplate.opsForValue().get(key);
+        return  jedisCache.get(key);
     }
 
-    public Object get(String key,Class clazz) {
 
-        String value = (String) redisTemplate.opsForValue().get(key);
-        return  JSON.parseObject(value,clazz);
-    }
 
     /**
      * 删除 key 对应的 value
@@ -196,7 +151,7 @@ public class RedisService {
      */
     public boolean delete(String key) {
         try {
-            redisTemplate.delete(key);
+            jedisCache.delKey(key);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -205,17 +160,5 @@ public class RedisService {
 
     }
 
-    public void setHash(String hashName,Map<String,String> map) {
-        redisTemplate.opsForHash().putAll(hashName,map);
-    }
 
-    @Cacheable(cacheNames = "users",keyGenerator ="myKeyGenerator")
-    public Map<Object,Object> getHash(String hashName){
-        if (redisTemplate.hasKey(hashName)) {
-            System.out.println(redisTemplate.opsForHash().entries(hashName));
-            return redisTemplate.opsForHash().entries(hashName);
-        }else {
-            return null;
-        }
-    }
 }
