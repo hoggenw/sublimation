@@ -48,6 +48,7 @@ public class MD5Util {
 
 	public static void main(String[] args) {
 		System.out.println("账号：  " + MD5Encode("123456"));
+		System.out.println("mima：  " + MD5Encode("e10adc3949ba59abbe56e057f20f883e"+"351pHVPP"));
 		// System.out.println("密码： " + getEncryptString("ai123$%^"));
 		// // System.out.println(getEncryptString("wxd7f6c5b8899fba83"));
 		// // System.out.println(getEncryptString("665ae80dba31fc91ab6191e7da4d676d"));

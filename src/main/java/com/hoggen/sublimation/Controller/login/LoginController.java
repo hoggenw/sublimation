@@ -106,14 +106,58 @@ public class LoginController {
         return loginService.quit(quitDTO);
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.GET)
-    @ResponseBody
-    private Map<String, Object> update(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<String, Object>();
-        User user = new User();
-        UserExecution effect = userService.modifyUser(user);
 
-        return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),effect.getUser());
+    @ApiOperation(value = "使用旧密码更新密码")
+    @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
+    @ResponseBody
+    private Map<String, Object> updatePassword(HttpServletRequest request,@Validated @RequestBody UpdatePasswordDTO updatePasswordDTO) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+//        String newPassword = HttpServletRequestUtil.getString(request,"newPassword");
+//        String oldPassword = HttpServletRequestUtil.getString(request,"oldPassword");
+//        if (newPassword == null ||  oldPassword == null) {
+//            return ResponedUtils.returnCode(LoginStateEnum.INNERERROR.getState(),LoginStateEnum.INNERERROR.getStateInfo(),modelMap);
+//        }
+        String userId = request.getHeader("userId");
+        User user = userService.queryByUserId(userId);
+        if (user == null || user.getStatus() == 0) {
+            return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(),LoginStateEnum.EMPTY.getStateInfo(),modelMap);
+
+        }
+        if (user != null && user.getPassword() != null) {
+            if ((MD5Util.MD5Encode(updatePasswordDTO.getOldPassword() + user.getRandomString())).equals(user.getPassword())) {
+                User newPasswordUser = new User();
+                newPasswordUser.setUserId(userId);
+                newPasswordUser.setPassword(updatePasswordDTO.getNewPassword());
+                newPasswordUser.setUpdateTime(new Date());
+                UserExecution effect = userService.modifyUser(newPasswordUser);
+                return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),modelMap);
+
+            }
+            else  {
+                return ResponedUtils.returnCode(LoginStateEnum.USERNONE.getState(),LoginStateEnum.USERNONE.getStateInfo(),modelMap);
+            }
+        }else {
+            return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(),LoginStateEnum.EMPTY.getStateInfo(),modelMap);
+        }
+
+    }
+    @ApiOperation(value = "更新头像")
+    @RequestMapping(value = "/updateAvatar", method = RequestMethod.GET)
+    @ResponseBody
+    private Map<String, Object> updateAvatar(HttpServletRequest request,@Validated @RequestBody UpdateAvatarDTO updateAvatarDTO) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        String userId = request.getHeader("userId");
+        User user = userService.queryByUserId(userId);
+        if (user == null || user.getStatus() == 0) {
+            return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(),LoginStateEnum.EMPTY.getStateInfo(),modelMap);
+        }
+        User userAvartar = new User();
+        userAvartar.setUserId(userId);
+        userAvartar.setAvatar(updateAvatarDTO.getAvatar());
+
+        UserExecution effect = userService.modifyUser(userAvartar);
+
+        return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),modelMap);
     }
 
 

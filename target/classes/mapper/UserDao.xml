@@ -142,7 +142,7 @@
             <if test="password != null">password=#{password},</if>
 <!--&#45;&#45;             <if test="mobile != null">mobile=#{mobile},</if>-->
             <if test="randomString != null">random_string=#{randomString},</if>
-            <if test="avatar != null">real_name=#{realName},</if>
+            <if test="avatar != null">avatar=#{avatar},</if>
             <if test="status != null">status=#{status},</if>
             <if test="roleType != null">role_type=#{roleType},</if>
             <if test="updateTime != null">update_time=#{updateTime},</if>

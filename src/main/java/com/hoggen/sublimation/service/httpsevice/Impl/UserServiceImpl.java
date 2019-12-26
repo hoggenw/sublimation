@@ -95,7 +95,10 @@ public class UserServiceImpl implements UserService {
             try {
                 if(user.getPassword() != null){
                     String randomString = StringUtil.getRandomString(8);
-                    String storePassString = MD5Util.MD5Encode(user.getPassword() + randomString);
+                    //0Szf5S3S0k2a2fSace3eSAk2622c39ea
+                    String newPassword = user.getPassword();
+                    String md5String =  newPassword +  randomString;
+                    String storePassString = MD5Util.MD5Encode(md5String);
                     user.setPassword(storePassString);
                     user.setRandomString(randomString);
                 }
