@@ -134,7 +134,7 @@ public class LoginController {
 
             }
             else  {
-                return ResponedUtils.returnCode(LoginStateEnum.USERNONE.getState(),LoginStateEnum.USERNONE.getStateInfo(),modelMap);
+                return ResponedUtils.returnCode(LoginStateEnum.OLDPASSWORDERROR.getState(),LoginStateEnum.OLDPASSWORDERROR.getStateInfo(),modelMap);
             }
         }else {
             return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(),LoginStateEnum.EMPTY.getStateInfo(),modelMap);

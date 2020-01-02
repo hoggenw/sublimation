@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd13756-0acd-453c-a457-b83a0f600e27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/UpdateAvatarDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/UpdatePasswordDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/login/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/config/controller/MvcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/config/controller/MvcConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/enums/LoginStateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/enums/LoginStateEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/LoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/util/MD5Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/Controller/login/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/Controller/login/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/config/controller/MvcConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/config/controller/MvcConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/enums/LoginStateEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/enums/LoginStateEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/service/httpsevice/Impl/LoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/service/httpsevice/Impl/LoginServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/service/httpsevice/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/service/httpsevice/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoggen/sublimation/util/MD5Util.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,11 +35,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/login/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="157" column="67" lean-forward="true" selection-start-line="157" selection-start-column="67" selection-end-line="157" selection-end-column="67" />
+            <state relative-caret-position="43">
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/friend/FriendshipApplyController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -61,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/FriendshipDTO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="26" />
+              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -69,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/UpdatePasswordDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="180">
+              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="20" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/util/MD5Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="885">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -90,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="144" column="60" lean-forward="true" selection-start-line="144" selection-start-column="60" selection-end-line="144" selection-end-column="60" />
+            <state relative-caret-position="2160">
+              <caret line="144" column="60" selection-start-line="144" selection-start-column="60" selection-end-line="144" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -99,16 +95,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/LoginServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
+            <state relative-caret-position="540">
               <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="-217">
               <caret line="93" selection-start-line="93" selection-end-line="93" />
             </state>
           </provider>
@@ -117,7 +113,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/entity/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-42">
+            <state relative-caret-position="90">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
@@ -186,14 +182,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/config/redis/RedisConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/RedisService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/config/controller/MvcConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/enums/LoginStateEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/UpdatePasswordDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/LoginServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/util/MD5Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/UpdateAvatarDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/login/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/enums/LoginStateEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/login/LoginController.java" />
       </list>
     </option>
   </component>
@@ -218,11 +214,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="1" />
-    <option name="y" value="24" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="824" />
+    <option name="height" value="831" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -230,7 +225,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -412,6 +406,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -421,7 +416,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577346755960" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577347574835" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -502,18 +497,18 @@
       <workItem from="1577256316462" duration="276000" />
       <workItem from="1577256596236" duration="4417000" />
       <workItem from="1577326514466" duration="1643000" />
-      <workItem from="1577340093309" duration="5673000" />
+      <workItem from="1577340093309" duration="5676000" />
+      <workItem from="1577692717425" duration="1512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47141000" />
+    <option name="totallyTimeSpent" value="48656000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="24" width="1440" height="824" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="831" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2746781" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -524,7 +519,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32742155" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3989071" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39783493" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -551,26 +546,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/UserServiceImpl.java</url>
-          <line>103</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/BlackFriendshipService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/enums/UserStateEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -815,20 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/enums/LoginStateEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/friend/FriendshipApplyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1766">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/util/HttpServletRequestUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
@@ -850,41 +812,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/LoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/util/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/FriendshipDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/UpdatePasswordDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -898,34 +829,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/login/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/FriendshipDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="157" column="67" lean-forward="true" selection-start-line="157" selection-start-column="67" selection-end-line="157" selection-end-column="67" />
+        <state relative-caret-position="225">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/dto/UpdatePasswordDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="20" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/entity/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/util/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="885">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="144" column="60" lean-forward="true" selection-start-line="144" selection-start-column="60" selection-end-line="144" selection-end-column="60" />
+        <state relative-caret-position="2160">
+          <caret line="144" column="60" selection-start-line="144" selection-start-column="60" selection-end-line="144" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/LoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="-217">
           <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/enums/LoginStateEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/login/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/service/httpsevice/Impl/BlackFriendshipServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="62" column="43" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoggen/sublimation/Controller/friend/FriendshipApplyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
         </state>
       </provider>
     </entry>

@@ -11,7 +11,8 @@ public enum LoginStateEnum {
     FREEZE(11005, "用户被冻结"),
     CODEERROR(11006, "验证码错误")
     ,QUITERROR(11007, "退出登录失败")
-    ,INNERERROR(11008, "参数错误");
+    ,OLDPASSWORDERROR(11008, "原密码错误")
+    ,INNERERROR(11009, "参数错误");
 
     private int state;
 
