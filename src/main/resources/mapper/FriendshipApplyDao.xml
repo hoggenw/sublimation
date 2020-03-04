@@ -8,6 +8,10 @@
         <result property="status" column="status" />
         <result property="userId" column="user_id" />
         <result property="friendId" column="friend_id" />
+        <result property="firendCategoryName" column="firend_category_name" />
+        <result property="userCategoryName" column="user_category_name" />
+        <result property="friendRemark" column="friend_remark" />
+        <result property="userRemark" column="user_remark" />
         <!-- 配置一对多的关系
             property：填写pojo类中集合类类属性的名称
             javaType：填写集合类型的名称
@@ -40,6 +44,10 @@
         <result property="status" column="status" />
         <result property="userId" column="user_id" />
         <result property="friendId" column="friend_id" />
+        <result property="firendCategoryName" column="firend_category_name" />
+        <result property="userCategoryName" column="user_category_name" />
+        <result property="friendRemark" column="friend_remark" />
+        <result property="userRemark" column="user_remark" />
     </resultMap>
 
 
@@ -59,17 +67,25 @@
         user_id,
         friend_id,
         status,
+        firend_category_name,
+        user_category_name,
+        friend_remark,
+        user_remark,
         create_time)
         VALUES
-        (#{id},#{userId},#{friendId},#{status},#{createTime})
+        (#{id},#{userId},#{friendId},#{status},,#{firendCategoryName},#{userCategoryName},#{friendRemark},#{userRemark},#{createTime})
     </insert>
 
 
     <update id="updateFriendship" parameterType="com.hoggen.sublimation.entity.FriendshipApply"
             keyProperty="id" keyColumn="id" useGeneratedKeys="true">
-        UPDATE tb_friendship_apply as p
+        UPDATE tb_friendship_apply
         <set>
             <if test="status!=0 and status!=null ">status=#{status},</if>
+            <if test="firendCategoryName!=null ">firend_category_name=#{firendCategoryName},</if>
+            <if test="userCategoryName!=null ">user_category_name=#{userCategoryName},</if>
+            <if test="friendRemark!=null ">friend_remark=#{friendRemark},</if>
+            <if test="userRemark!=null ">user_remark=#{userRemark},</if>
             <if test="deleteStatus!=0 and deleteStatus!=null ">p.delete_status=#{deleteStatus},</if>
         </set>
         WHERE id = #{id}
@@ -81,7 +97,11 @@
         p.id,
         p.user_id,
         p.friend_id,
+        p.firend_category_name,
+        p.user_category_name,
         p.status,
+        p.friend_remark,
+        p.user_remark,
 
         p1.user_id,
         p1.user_name,
@@ -115,6 +135,10 @@
         p.user_id,
         p.friend_id,
         p.status,
+        p.firend_category_name,
+        p.user_category_name,
+        p.friend_remark,
+        p.user_remark,
 
         p1.user_id,
         p1.user_name,
@@ -145,6 +169,10 @@
             id,
             user_id,
             friend_id,
+            firend_category_name,
+            user_category_name,
+            friend_remark,
+            user_remark,
             status
             FROM
             tb_friendship_apply
@@ -152,7 +180,6 @@
             WHERE 1=1
         AND
         delete_status=0
-
         and
         (user_id =
         #{userId}
@@ -166,6 +193,10 @@
             id,
             user_id,
             friend_id,
+            firend_category_name,
+            user_category_name,
+            friend_remark,
+            user_remark,
             status
             FROM
             tb_friendship_apply

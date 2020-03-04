@@ -2,9 +2,11 @@ package com.hoggen.sublimation.Controller.login;
 
 
 import com.hoggen.sublimation.dto.*;
+import com.hoggen.sublimation.entity.FriendshipApply;
 import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.LoginStateEnum;
 import com.hoggen.sublimation.enums.UserStateEnum;
+import com.hoggen.sublimation.service.httpsevice.FriendshipApplyService;
 import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
 import com.hoggen.sublimation.service.httpsevice.LoginService;
 import com.hoggen.sublimation.service.httpsevice.UserService;
@@ -50,6 +52,8 @@ public class LoginController {
     @Autowired
     private Producer captchaProducer;
 
+     @Autowired
+     private FriendshipApplyService applyService;
     @Autowired
     private RedisService redisService;
 
@@ -63,18 +67,49 @@ public class LoginController {
     }
 
 
-    @RequestMapping(value = "/info", method = RequestMethod.GET)
+    @RequestMapping(value = "/info", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "用户信息获取")
-    private Map<String, Object> userInfo(HttpServletRequest request) {
+    private Map<String, Object> userInfo(HttpServletRequest request,@Validated @RequestBody UserInfoDTO userInfo) {
         String token = request.getHeader("token");
-        String userId = request.getHeader("userId");
-        Map<String, Object> modelMap = new HashMap<String, Object>();
-        User user = userService.queryByUserId(userId);
-        if (user == null) {
-            return ResponedUtils.returnCode(UserStateEnum.EMPTY.getState(),UserStateEnum.EMPTY.getStateInfo(),"");
+        String selfId = request.getHeader("userId");
+        if (selfId.equals(userInfo.getUserId())){
+            Map<String, Object> modelMap = new HashMap<String, Object>();
+            User user = userService.queryByUserId(userInfo.getUserId());
+            if (user == null) {
+                return ResponedUtils.returnCode(UserStateEnum.EMPTY.getState(),UserStateEnum.EMPTY.getStateInfo(),"");
+            }
+            return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),new ReturnUserDTO(user,1));
+
+        } else if (userInfo.getApplyId() != null && userInfo.getApplyId().length() > 0) {
+            FriendshipApply friendshipApply = applyService.queryFriendshipApply(userInfo.getApplyId() );
+            if (friendshipApply == null ){
+                return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPEMPTY.getState(),UserStateEnum.FRIENDSHIPEMPTY.getStateInfo(),"");
+            }
+            if ((friendshipApply.getFriendId().equals(userInfo.getUserId()) && friendshipApply.getUserId().equals(selfId)) || (friendshipApply.getFriendId().equals(selfId) && friendshipApply.getUserId().equals(userInfo.getUserId()))){
+                Map<String, Object> modelMap = new HashMap<String, Object>();
+                User user = userService.queryByUserId(userInfo.getUserId());
+                if (user == null) {
+                    return ResponedUtils.returnCode(UserStateEnum.EMPTY.getState(),UserStateEnum.EMPTY.getStateInfo(),"");
+                }
+                return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),new ReturnUserDTO(user,2));
+
+            }else {
+                return ResponedUtils.returnCode(UserStateEnum.ROLEIILLEGAl.getState(),UserStateEnum.ROLEIILLEGAl.getStateInfo(),"");
+
+            }
+
         }
-        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),new ReturnUserDTO(user));
+        else  {
+             return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),"");
+
+        }
+
+
+
+
+
+
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -94,8 +129,8 @@ public class LoginController {
         if (effect.getState() != 0){
             return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),modelMap);
         }
-
-        return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),new ReturnUserDTO(effect.getUser()));
+        User returnUser =  effect.getUser();
+        return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),new ReturnUserDTO(returnUser,1));
     }
 
     @RequestMapping(value = "/quit", method = RequestMethod.POST)
@@ -185,7 +220,6 @@ public class LoginController {
         BASE64Encoder encoder = new BASE64Encoder();
         Map<String, Object> modelMap = new HashMap<String, Object>();
         modelMap.put("img", encoder.encode(jpegOutputStream.toByteArray()));
-
         return ResponedUtils.returnCode(LoginStateEnum.SUCCESS.getState(),LoginStateEnum.SUCCESS.getStateInfo(),modelMap);
 
     }

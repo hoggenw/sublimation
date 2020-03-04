@@ -19,7 +19,7 @@ public class ReturnUserDTO implements Serializable {
     // ID
     @ApiModelProperty(value = "userId")
     @NotBlank
-    private String userId;
+    private String userID;
     //头像
     @ApiModelProperty(value = "头像连接")
     private String avatar;
@@ -27,12 +27,12 @@ public class ReturnUserDTO implements Serializable {
     // 名称
     @ApiModelProperty(value = "昵称")
     @NotBlank
-    private String userName;
+    private String name;
 
     // mobile
-    @ApiModelProperty(value = "mobile")
+    @ApiModelProperty(value = "phone")
     @NotBlank
-    private String mobile;
+    private String phone;
 
     // 用户状态(1正常，0冻结)
     @ApiModelProperty(value = "用户状态(1正常，0冻结)")
@@ -47,15 +47,19 @@ public class ReturnUserDTO implements Serializable {
     private String codeName;
 
 
-    public ReturnUserDTO(User user) {
-        this.userId = user.getUserId();
+    public ReturnUserDTO(User user,Integer type) {
+        this.userID = user.getUserId();
         this.avatar = user.getAvatar();
-        this.userName = user.getUserName();
-        this.mobile = user.getMobile();
+        this.name = user.getUserName();
+        if (type == 1){
+            this.phone = user.getMobile();
+        }
         this.status = user.getStatus();
         this.roleType = user.getRoleType();
         this.codeName = user.getCodeName();
 
     }
+
+
 
 }

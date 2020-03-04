@@ -32,9 +32,28 @@ public class FriendshipApply {
     @ApiModelProperty(value = "请求状态")
     private Integer status;
 
+    //别名
+    @ApiModelProperty(value = "别名firend")
+    private String firendCategoryName;
+
+    //别名
+    @ApiModelProperty(value = "别名user")
+    private String userCategoryName;
+
+
+    //别名
+    @ApiModelProperty(value = "firend申请说明")
+    private String friendRemark;
+
+    //别名
+    @ApiModelProperty(value = "user申请说明")
+    private String userRemark;
+
+
 
 //    private String fuId;
 //
+
 //    private String ufId;
 
     // 创建时间

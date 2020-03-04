@@ -2,6 +2,7 @@ package com.hoggen.sublimation.Controller.friend;
 
 
 import com.hoggen.sublimation.dto.FriendshipDTO;
+import com.hoggen.sublimation.dto.UpdateUserCategoryDTO;
 import com.hoggen.sublimation.entity.BlackFriendship;
 import com.hoggen.sublimation.entity.FriendshipApply;
 import com.hoggen.sublimation.enums.UserStateEnum;
@@ -127,6 +128,41 @@ public class FriendshipApplyController {
 
     }
 
+    @RequestMapping(value = "/updateFriendship", method = RequestMethod.POST)
+    @ApiOperation(value = "更新备注名及备注信息")
+    @ResponseBody
+    private Map<String, Object> categoryName(HttpServletRequest request, @Validated @RequestBody UpdateUserCategoryDTO apply){
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        String userId = request.getHeader("userId");
+        FriendshipApply friendshipApply = applyService.queryFriendshipApply(apply.getId());
+        if (friendshipApply == null ){
+            return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPEMPTY.getState(),UserStateEnum.FRIENDSHIPEMPTY.getStateInfo(),modelMap);
+        }
+        if (friendshipApply.getUserId().equals(userId) ){
+            friendshipApply.setFirendCategoryName(apply.getName());
+            friendshipApply.setUserRemark(apply.getRemark());
+
+        }else if  (friendshipApply.getFriendId().equals(userId) ){
+            friendshipApply.setUserCategoryName(apply.getName());
+            friendshipApply.setFriendRemark(apply.getRemark());
+
+        }else {
+            return ResponedUtils.returnCode(UserStateEnum.OFFLINE.getState(),UserStateEnum.OFFLINE.getStateInfo(),modelMap);
+
+        }
+        if (apply.getRemark() != null && apply.getRemark().length() <=0 && apply.getName() != null && apply.getName().length() <= 0 ){
+            return ResponedUtils.returnCode(UserStateEnum.INFOILLEGAl.getState(),UserStateEnum.INFOILLEGAl.getStateInfo(),modelMap);
+
+        }
+        int effcet = applyService.updateFriendship(friendshipApply);
+        if (effcet < 0){
+            return ResponedUtils.returnCode(UserStateEnum.INNER_ERROR.getState(),UserStateEnum.INNER_ERROR.getStateInfo(),modelMap);
+
+        }
+
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),modelMap);
+
+    }
 
 
 
@@ -137,18 +173,16 @@ public class FriendshipApplyController {
         Map<String, Object> modelMap = new HashMap<String, Object>();
 
         String userId = request.getHeader("userId");
-        if (!apply.getUserId().equals(userId)){
+        if (!apply.getFriendId().equals(userId)){
             return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),modelMap);
-
         }
-
         FriendshipApply friendshipApply = applyService.queryFriendshipApply(apply.getId());
         if (friendshipApply == null ){
             return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPEMPTY.getState(),UserStateEnum.FRIENDSHIPEMPTY.getStateInfo(),modelMap);
         }
         if (apply.getUserId().equals(friendshipApply.getUserId()) && apply.getFriendId().equals(friendshipApply.getFriendId())){
-            friendshipApply.setStatus(1);
-            int effect = applyService.updateFriendship(friendshipApply);
+            apply.setStatus(1);
+            int effect = applyService.updateFriendship(apply);
             if (effect < 0){
                 //
                 return ResponedUtils.returnCode(UserStateEnum.APPLYFRIENDFAILED.getState(),UserStateEnum.APPLYFRIENDFAILED.getStateInfo(),modelMap);

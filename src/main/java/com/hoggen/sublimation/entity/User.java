@@ -34,7 +34,7 @@ public class User {
     private Date updateTime;
 //
 //    // 备注
-//    private String remark;
+//  private String remark;
 
     private Integer roleType;
    //7聊号

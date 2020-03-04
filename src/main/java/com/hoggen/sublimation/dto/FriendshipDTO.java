@@ -24,6 +24,20 @@ public class FriendshipDTO {
     // ID
     private String friendId;
 
+    //别名
+    private String firendCategoryName;
+
+    //别名
+    private String userCategoryName;
+
+    //别名
+
+    private String friendRemark;
+
+    //别名
+    private String userRemark;
+
+
 //    //是否已经删除
 //    private Integer delete;
 

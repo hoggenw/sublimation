@@ -64,7 +64,7 @@ public class LoginServiceImpl implements LoginService {
                 }
 
                 modelMapData.put("token",returnToken);
-                modelMapData.put("user",new ReturnUserDTO(user));
+                modelMapData.put("user",new ReturnUserDTO(user,1));
 
                 User user1 = new User();
                 user1.setLastLoginTime(new Date());

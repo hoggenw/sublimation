@@ -38,7 +38,7 @@ public class MessageServiceImpl implements MessageService {
             String  userId =  model.getFromUser().getUserId();
 
             MessageModel.YLMessageModel.Builder builder =  MessageModel.YLMessageModel.newBuilder();
-            builder.setTextString("我收到你的信息了").setMessageType(2);
+            builder.setTextString(model.getTextString()).setMessageType(2).setFromUser(model.getFromUser());
             MessageModel.YLMessageModel model2 = builder.build();
 
             BaseMessageModel.YLBaseMessageModel.Builder baseBuilder = BaseMessageModel.YLBaseMessageModel.newBuilder();
