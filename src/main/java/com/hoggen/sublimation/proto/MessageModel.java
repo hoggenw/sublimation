@@ -21,7 +21,7 @@ public final class MessageModel {
     /**
      * <code>string userId = 1;</code>
      */
-    String getUserId();
+    java.lang.String getUserId();
     /**
      * <code>string userId = 1;</code>
      */
@@ -31,7 +31,7 @@ public final class MessageModel {
     /**
      * <code>string name = 2;</code>
      */
-    String getName();
+    java.lang.String getName();
     /**
      * <code>string name = 2;</code>
      */
@@ -45,7 +45,7 @@ public final class MessageModel {
      *
      * <code>string avatar = 3;</code>
      */
-    String getAvatar();
+    java.lang.String getAvatar();
     /**
      * <pre>
      *头像
@@ -78,7 +78,7 @@ public final class MessageModel {
       avatar_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -89,7 +89,7 @@ public final class MessageModel {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -110,19 +110,19 @@ public final class MessageModel {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               userId_ = s;
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
             case 26: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               avatar_ = s;
               break;
@@ -141,29 +141,29 @@ public final class MessageModel {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MessageModel.internal_static_YLUserModel_descriptor;
+      return com.hoggen.sublimation.proto.MessageModel.internal_static_YLUserModel_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MessageModel.internal_static_YLUserModel_fieldAccessorTable
+      return com.hoggen.sublimation.proto.MessageModel.internal_static_YLUserModel_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              YLUserModel.class, Builder.class);
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel.class, com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder.class);
     }
 
     public static final int USERID_FIELD_NUMBER = 1;
-    private volatile Object userId_;
+    private volatile java.lang.Object userId_;
     /**
      * <code>string userId = 1;</code>
      */
-    public String getUserId() {
-      Object ref = userId_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         userId_ = s;
         return s;
       }
@@ -173,11 +173,11 @@ public final class MessageModel {
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
-      Object ref = userId_;
-      if (ref instanceof String) {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         userId_ = b;
         return b;
       } else {
@@ -186,18 +186,18 @@ public final class MessageModel {
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile Object name_;
+    private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
      */
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
       }
@@ -207,11 +207,11 @@ public final class MessageModel {
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -220,7 +220,7 @@ public final class MessageModel {
     }
 
     public static final int AVATAR_FIELD_NUMBER = 3;
-    private volatile Object avatar_;
+    private volatile java.lang.Object avatar_;
     /**
      * <pre>
      *头像
@@ -228,14 +228,14 @@ public final class MessageModel {
      *
      * <code>string avatar = 3;</code>
      */
-    public String getAvatar() {
-      Object ref = avatar_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getAvatar() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         avatar_ = s;
         return s;
       }
@@ -249,11 +249,11 @@ public final class MessageModel {
      */
     public com.google.protobuf.ByteString
         getAvatarBytes() {
-      Object ref = avatar_;
-      if (ref instanceof String) {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         avatar_ = b;
         return b;
       } else {
@@ -304,15 +304,15 @@ public final class MessageModel {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof YLUserModel)) {
+      if (!(obj instanceof com.hoggen.sublimation.proto.MessageModel.YLUserModel)) {
         return super.equals(obj);
       }
-      YLUserModel other = (YLUserModel) obj;
+      com.hoggen.sublimation.proto.MessageModel.YLUserModel other = (com.hoggen.sublimation.proto.MessageModel.YLUserModel) obj;
 
       boolean result = true;
       result = result && getUserId()
@@ -325,7 +325,7 @@ public final class MessageModel {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -343,69 +343,69 @@ public final class MessageModel {
       return hash;
     }
 
-    public static YLUserModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static YLUserModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static YLUserModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static YLUserModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static YLUserModel parseFrom(byte[] data)
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static YLUserModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static YLUserModel parseFrom(java.io.InputStream input)
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static YLUserModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static YLUserModel parseDelimitedFrom(java.io.InputStream input)
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static YLUserModel parseDelimitedFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static YLUserModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static YLUserModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -417,7 +417,7 @@ public final class MessageModel {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(YLUserModel prototype) {
+    public static Builder newBuilder(com.hoggen.sublimation.proto.MessageModel.YLUserModel prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -425,9 +425,9 @@ public final class MessageModel {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -441,17 +441,17 @@ public final class MessageModel {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:YLUserModel)
-        YLUserModelOrBuilder {
+        com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MessageModel.internal_static_YLUserModel_descriptor;
+        return com.hoggen.sublimation.proto.MessageModel.internal_static_YLUserModel_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MessageModel.internal_static_YLUserModel_fieldAccessorTable
+        return com.hoggen.sublimation.proto.MessageModel.internal_static_YLUserModel_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                YLUserModel.class, Builder.class);
+                com.hoggen.sublimation.proto.MessageModel.YLUserModel.class, com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder.class);
       }
 
       // Construct using com.hoggen.sublimation.proto.MessageModel.YLUserModel.newBuilder()
@@ -460,7 +460,7 @@ public final class MessageModel {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -482,23 +482,23 @@ public final class MessageModel {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MessageModel.internal_static_YLUserModel_descriptor;
+        return com.hoggen.sublimation.proto.MessageModel.internal_static_YLUserModel_descriptor;
       }
 
-      public YLUserModel getDefaultInstanceForType() {
-        return YLUserModel.getDefaultInstance();
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModel getDefaultInstanceForType() {
+        return com.hoggen.sublimation.proto.MessageModel.YLUserModel.getDefaultInstance();
       }
 
-      public YLUserModel build() {
-        YLUserModel result = buildPartial();
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModel build() {
+        com.hoggen.sublimation.proto.MessageModel.YLUserModel result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public YLUserModel buildPartial() {
-        YLUserModel result = new YLUserModel(this);
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModel buildPartial() {
+        com.hoggen.sublimation.proto.MessageModel.YLUserModel result = new com.hoggen.sublimation.proto.MessageModel.YLUserModel(this);
         result.userId_ = userId_;
         result.name_ = name_;
         result.avatar_ = avatar_;
@@ -511,7 +511,7 @@ public final class MessageModel {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -524,25 +524,25 @@ public final class MessageModel {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof YLUserModel) {
-          return mergeFrom((YLUserModel)other);
+        if (other instanceof com.hoggen.sublimation.proto.MessageModel.YLUserModel) {
+          return mergeFrom((com.hoggen.sublimation.proto.MessageModel.YLUserModel)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(YLUserModel other) {
-        if (other == YLUserModel.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.hoggen.sublimation.proto.MessageModel.YLUserModel other) {
+        if (other == com.hoggen.sublimation.proto.MessageModel.YLUserModel.getDefaultInstance()) return this;
         if (!other.getUserId().isEmpty()) {
           userId_ = other.userId_;
           onChanged();
@@ -568,11 +568,11 @@ public final class MessageModel {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        YLUserModel parsedMessage = null;
+        com.hoggen.sublimation.proto.MessageModel.YLUserModel parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (YLUserModel) e.getUnfinishedMessage();
+          parsedMessage = (com.hoggen.sublimation.proto.MessageModel.YLUserModel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -582,20 +582,20 @@ public final class MessageModel {
         return this;
       }
 
-      private Object userId_ = "";
+      private java.lang.Object userId_ = "";
       /**
        * <code>string userId = 1;</code>
        */
-      public String getUserId() {
-        Object ref = userId_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           userId_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -603,11 +603,11 @@ public final class MessageModel {
        */
       public com.google.protobuf.ByteString
           getUserIdBytes() {
-        Object ref = userId_;
+        java.lang.Object ref = userId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           userId_ = b;
           return b;
         } else {
@@ -618,7 +618,7 @@ public final class MessageModel {
        * <code>string userId = 1;</code>
        */
       public Builder setUserId(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -651,20 +651,20 @@ public final class MessageModel {
         return this;
       }
 
-      private Object name_ = "";
+      private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
        */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -672,11 +672,11 @@ public final class MessageModel {
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
-        Object ref = name_;
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -687,7 +687,7 @@ public final class MessageModel {
        * <code>string name = 2;</code>
        */
       public Builder setName(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -720,7 +720,7 @@ public final class MessageModel {
         return this;
       }
 
-      private Object avatar_ = "";
+      private java.lang.Object avatar_ = "";
       /**
        * <pre>
        *头像
@@ -728,16 +728,16 @@ public final class MessageModel {
        *
        * <code>string avatar = 3;</code>
        */
-      public String getAvatar() {
-        Object ref = avatar_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getAvatar() {
+        java.lang.Object ref = avatar_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           avatar_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -749,11 +749,11 @@ public final class MessageModel {
        */
       public com.google.protobuf.ByteString
           getAvatarBytes() {
-        Object ref = avatar_;
+        java.lang.Object ref = avatar_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           avatar_ = b;
           return b;
         } else {
@@ -768,7 +768,7 @@ public final class MessageModel {
        * <code>string avatar = 3;</code>
        */
       public Builder setAvatar(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -823,12 +823,12 @@ public final class MessageModel {
     }
 
     // @@protoc_insertion_point(class_scope:YLUserModel)
-    private static final YLUserModel DEFAULT_INSTANCE;
+    private static final com.hoggen.sublimation.proto.MessageModel.YLUserModel DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new YLUserModel();
+      DEFAULT_INSTANCE = new com.hoggen.sublimation.proto.MessageModel.YLUserModel();
     }
 
-    public static YLUserModel getDefaultInstance() {
+    public static com.hoggen.sublimation.proto.MessageModel.YLUserModel getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -846,12 +846,12 @@ public final class MessageModel {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<YLUserModel> getParserForType() {
       return PARSER;
     }
 
-    public YLUserModel getDefaultInstanceForType() {
+    public com.hoggen.sublimation.proto.MessageModel.YLUserModel getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -876,7 +876,7 @@ public final class MessageModel {
      *
      * <code>.YLUserModel fromUser = 1;</code>
      */
-    YLUserModel getFromUser();
+    com.hoggen.sublimation.proto.MessageModel.YLUserModel getFromUser();
     /**
      * <pre>
      *发送人
@@ -884,7 +884,7 @@ public final class MessageModel {
      *
      * <code>.YLUserModel fromUser = 1;</code>
      */
-    YLUserModelOrBuilder getFromUserOrBuilder();
+    com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder getFromUserOrBuilder();
 
     /**
      * <pre>
@@ -901,7 +901,7 @@ public final class MessageModel {
      *
      * <code>.YLUserModel toUser = 2;</code>
      */
-    YLUserModel getToUser();
+    com.hoggen.sublimation.proto.MessageModel.YLUserModel getToUser();
     /**
      * <pre>
      *送达人
@@ -909,7 +909,7 @@ public final class MessageModel {
      *
      * <code>.YLUserModel toUser = 2;</code>
      */
-    YLUserModelOrBuilder getToUserOrBuilder();
+    com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder getToUserOrBuilder();
 
     /**
      * <pre>
@@ -927,7 +927,7 @@ public final class MessageModel {
      *
      * <code>string textString = 4;</code>
      */
-    String getTextString();
+    java.lang.String getTextString();
     /**
      * <pre>
      *消息字符
@@ -945,7 +945,7 @@ public final class MessageModel {
      *
      * <code>string messageSource = 5;</code>
      */
-    String getMessageSource();
+    java.lang.String getMessageSource();
     /**
      * <pre>
      *消息资源地址（如图片、视频、文件）
@@ -981,7 +981,7 @@ public final class MessageModel {
      *
      * <code>string token = 8;</code>
      */
-    String getToken();
+    java.lang.String getToken();
     /**
      * <pre>
      *token
@@ -991,6 +991,24 @@ public final class MessageModel {
      */
     com.google.protobuf.ByteString
         getTokenBytes();
+
+    /**
+     * <pre>
+     *token
+     * </pre>
+     *
+     * <code>string messageId = 9;</code>
+     */
+    java.lang.String getMessageId();
+    /**
+     * <pre>
+     *token
+     * </pre>
+     *
+     * <code>string messageId = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getMessageIdBytes();
   }
   /**
    * <pre>
@@ -1015,9 +1033,10 @@ public final class MessageModel {
       voiceLength_ = 0;
       voiceData_ = com.google.protobuf.ByteString.EMPTY;
       token_ = "";
+      messageId_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1028,7 +1047,7 @@ public final class MessageModel {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -1049,11 +1068,11 @@ public final class MessageModel {
               break;
             }
             case 10: {
-              YLUserModel.Builder subBuilder = null;
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder subBuilder = null;
               if (fromUser_ != null) {
                 subBuilder = fromUser_.toBuilder();
               }
-              fromUser_ = input.readMessage(YLUserModel.parser(), extensionRegistry);
+              fromUser_ = input.readMessage(com.hoggen.sublimation.proto.MessageModel.YLUserModel.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(fromUser_);
                 fromUser_ = subBuilder.buildPartial();
@@ -1062,11 +1081,11 @@ public final class MessageModel {
               break;
             }
             case 18: {
-              YLUserModel.Builder subBuilder = null;
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder subBuilder = null;
               if (toUser_ != null) {
                 subBuilder = toUser_.toBuilder();
               }
-              toUser_ = input.readMessage(YLUserModel.parser(), extensionRegistry);
+              toUser_ = input.readMessage(com.hoggen.sublimation.proto.MessageModel.YLUserModel.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(toUser_);
                 toUser_ = subBuilder.buildPartial();
@@ -1080,13 +1099,13 @@ public final class MessageModel {
               break;
             }
             case 34: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               textString_ = s;
               break;
             }
             case 42: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               messageSource_ = s;
               break;
@@ -1102,9 +1121,15 @@ public final class MessageModel {
               break;
             }
             case 66: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               token_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              messageId_ = s;
               break;
             }
           }
@@ -1121,18 +1146,18 @@ public final class MessageModel {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MessageModel.internal_static_YLMessageModel_descriptor;
+      return com.hoggen.sublimation.proto.MessageModel.internal_static_YLMessageModel_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MessageModel.internal_static_YLMessageModel_fieldAccessorTable
+      return com.hoggen.sublimation.proto.MessageModel.internal_static_YLMessageModel_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              YLMessageModel.class, Builder.class);
+              com.hoggen.sublimation.proto.MessageModel.YLMessageModel.class, com.hoggen.sublimation.proto.MessageModel.YLMessageModel.Builder.class);
     }
 
     public static final int FROMUSER_FIELD_NUMBER = 1;
-    private YLUserModel fromUser_;
+    private com.hoggen.sublimation.proto.MessageModel.YLUserModel fromUser_;
     /**
      * <pre>
      *发送人
@@ -1150,8 +1175,8 @@ public final class MessageModel {
      *
      * <code>.YLUserModel fromUser = 1;</code>
      */
-    public YLUserModel getFromUser() {
-      return fromUser_ == null ? YLUserModel.getDefaultInstance() : fromUser_;
+    public com.hoggen.sublimation.proto.MessageModel.YLUserModel getFromUser() {
+      return fromUser_ == null ? com.hoggen.sublimation.proto.MessageModel.YLUserModel.getDefaultInstance() : fromUser_;
     }
     /**
      * <pre>
@@ -1160,12 +1185,12 @@ public final class MessageModel {
      *
      * <code>.YLUserModel fromUser = 1;</code>
      */
-    public YLUserModelOrBuilder getFromUserOrBuilder() {
+    public com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder getFromUserOrBuilder() {
       return getFromUser();
     }
 
     public static final int TOUSER_FIELD_NUMBER = 2;
-    private YLUserModel toUser_;
+    private com.hoggen.sublimation.proto.MessageModel.YLUserModel toUser_;
     /**
      * <pre>
      *送达人
@@ -1183,8 +1208,8 @@ public final class MessageModel {
      *
      * <code>.YLUserModel toUser = 2;</code>
      */
-    public YLUserModel getToUser() {
-      return toUser_ == null ? YLUserModel.getDefaultInstance() : toUser_;
+    public com.hoggen.sublimation.proto.MessageModel.YLUserModel getToUser() {
+      return toUser_ == null ? com.hoggen.sublimation.proto.MessageModel.YLUserModel.getDefaultInstance() : toUser_;
     }
     /**
      * <pre>
@@ -1193,7 +1218,7 @@ public final class MessageModel {
      *
      * <code>.YLUserModel toUser = 2;</code>
      */
-    public YLUserModelOrBuilder getToUserOrBuilder() {
+    public com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder getToUserOrBuilder() {
       return getToUser();
     }
 
@@ -1211,7 +1236,7 @@ public final class MessageModel {
     }
 
     public static final int TEXTSTRING_FIELD_NUMBER = 4;
-    private volatile Object textString_;
+    private volatile java.lang.Object textString_;
     /**
      * <pre>
      *消息字符
@@ -1219,14 +1244,14 @@ public final class MessageModel {
      *
      * <code>string textString = 4;</code>
      */
-    public String getTextString() {
-      Object ref = textString_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getTextString() {
+      java.lang.Object ref = textString_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         textString_ = s;
         return s;
       }
@@ -1240,11 +1265,11 @@ public final class MessageModel {
      */
     public com.google.protobuf.ByteString
         getTextStringBytes() {
-      Object ref = textString_;
-      if (ref instanceof String) {
+      java.lang.Object ref = textString_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         textString_ = b;
         return b;
       } else {
@@ -1253,7 +1278,7 @@ public final class MessageModel {
     }
 
     public static final int MESSAGESOURCE_FIELD_NUMBER = 5;
-    private volatile Object messageSource_;
+    private volatile java.lang.Object messageSource_;
     /**
      * <pre>
      *消息资源地址（如图片、视频、文件）
@@ -1261,14 +1286,14 @@ public final class MessageModel {
      *
      * <code>string messageSource = 5;</code>
      */
-    public String getMessageSource() {
-      Object ref = messageSource_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMessageSource() {
+      java.lang.Object ref = messageSource_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         messageSource_ = s;
         return s;
       }
@@ -1282,11 +1307,11 @@ public final class MessageModel {
      */
     public com.google.protobuf.ByteString
         getMessageSourceBytes() {
-      Object ref = messageSource_;
-      if (ref instanceof String) {
+      java.lang.Object ref = messageSource_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         messageSource_ = b;
         return b;
       } else {
@@ -1321,7 +1346,7 @@ public final class MessageModel {
     }
 
     public static final int TOKEN_FIELD_NUMBER = 8;
-    private volatile Object token_;
+    private volatile java.lang.Object token_;
     /**
      * <pre>
      *token
@@ -1329,14 +1354,14 @@ public final class MessageModel {
      *
      * <code>string token = 8;</code>
      */
-    public String getToken() {
-      Object ref = token_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         token_ = s;
         return s;
       }
@@ -1350,12 +1375,54 @@ public final class MessageModel {
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
-      Object ref = token_;
-      if (ref instanceof String) {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGEID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object messageId_;
+    /**
+     * <pre>
+     *token
+     * </pre>
+     *
+     * <code>string messageId = 9;</code>
+     */
+    public java.lang.String getMessageId() {
+      java.lang.Object ref = messageId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        messageId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *token
+     * </pre>
+     *
+     * <code>string messageId = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageIdBytes() {
+      java.lang.Object ref = messageId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        messageId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1398,6 +1465,9 @@ public final class MessageModel {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, token_);
       }
+      if (!getMessageIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, messageId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1435,20 +1505,23 @@ public final class MessageModel {
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, token_);
       }
+      if (!getMessageIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, messageId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof YLMessageModel)) {
+      if (!(obj instanceof com.hoggen.sublimation.proto.MessageModel.YLMessageModel)) {
         return super.equals(obj);
       }
-      YLMessageModel other = (YLMessageModel) obj;
+      com.hoggen.sublimation.proto.MessageModel.YLMessageModel other = (com.hoggen.sublimation.proto.MessageModel.YLMessageModel) obj;
 
       boolean result = true;
       result = result && (hasFromUser() == other.hasFromUser());
@@ -1473,11 +1546,13 @@ public final class MessageModel {
           .equals(other.getVoiceData());
       result = result && getToken()
           .equals(other.getToken());
+      result = result && getMessageId()
+          .equals(other.getMessageId());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1504,74 +1579,76 @@ public final class MessageModel {
       hash = (53 * hash) + getVoiceData().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + MESSAGEID_FIELD_NUMBER;
+      hash = (53 * hash) + getMessageId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static YLMessageModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static YLMessageModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static YLMessageModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static YLMessageModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static YLMessageModel parseFrom(byte[] data)
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static YLMessageModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static YLMessageModel parseFrom(java.io.InputStream input)
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static YLMessageModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static YLMessageModel parseDelimitedFrom(java.io.InputStream input)
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static YLMessageModel parseDelimitedFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static YLMessageModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static YLMessageModel parseFrom(
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1583,7 +1660,7 @@ public final class MessageModel {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(YLMessageModel prototype) {
+    public static Builder newBuilder(com.hoggen.sublimation.proto.MessageModel.YLMessageModel prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1591,9 +1668,9 @@ public final class MessageModel {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1607,17 +1684,17 @@ public final class MessageModel {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:YLMessageModel)
-        YLMessageModelOrBuilder {
+        com.hoggen.sublimation.proto.MessageModel.YLMessageModelOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MessageModel.internal_static_YLMessageModel_descriptor;
+        return com.hoggen.sublimation.proto.MessageModel.internal_static_YLMessageModel_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MessageModel.internal_static_YLMessageModel_fieldAccessorTable
+        return com.hoggen.sublimation.proto.MessageModel.internal_static_YLMessageModel_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                YLMessageModel.class, Builder.class);
+                com.hoggen.sublimation.proto.MessageModel.YLMessageModel.class, com.hoggen.sublimation.proto.MessageModel.YLMessageModel.Builder.class);
       }
 
       // Construct using com.hoggen.sublimation.proto.MessageModel.YLMessageModel.newBuilder()
@@ -1626,7 +1703,7 @@ public final class MessageModel {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1661,28 +1738,30 @@ public final class MessageModel {
 
         token_ = "";
 
+        messageId_ = "";
+
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MessageModel.internal_static_YLMessageModel_descriptor;
+        return com.hoggen.sublimation.proto.MessageModel.internal_static_YLMessageModel_descriptor;
       }
 
-      public YLMessageModel getDefaultInstanceForType() {
-        return YLMessageModel.getDefaultInstance();
+      public com.hoggen.sublimation.proto.MessageModel.YLMessageModel getDefaultInstanceForType() {
+        return com.hoggen.sublimation.proto.MessageModel.YLMessageModel.getDefaultInstance();
       }
 
-      public YLMessageModel build() {
-        YLMessageModel result = buildPartial();
+      public com.hoggen.sublimation.proto.MessageModel.YLMessageModel build() {
+        com.hoggen.sublimation.proto.MessageModel.YLMessageModel result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public YLMessageModel buildPartial() {
-        YLMessageModel result = new YLMessageModel(this);
+      public com.hoggen.sublimation.proto.MessageModel.YLMessageModel buildPartial() {
+        com.hoggen.sublimation.proto.MessageModel.YLMessageModel result = new com.hoggen.sublimation.proto.MessageModel.YLMessageModel(this);
         if (fromUserBuilder_ == null) {
           result.fromUser_ = fromUser_;
         } else {
@@ -1699,6 +1778,7 @@ public final class MessageModel {
         result.voiceLength_ = voiceLength_;
         result.voiceData_ = voiceData_;
         result.token_ = token_;
+        result.messageId_ = messageId_;
         onBuilt();
         return result;
       }
@@ -1708,7 +1788,7 @@ public final class MessageModel {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1721,25 +1801,25 @@ public final class MessageModel {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof YLMessageModel) {
-          return mergeFrom((YLMessageModel)other);
+        if (other instanceof com.hoggen.sublimation.proto.MessageModel.YLMessageModel) {
+          return mergeFrom((com.hoggen.sublimation.proto.MessageModel.YLMessageModel)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(YLMessageModel other) {
-        if (other == YLMessageModel.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.hoggen.sublimation.proto.MessageModel.YLMessageModel other) {
+        if (other == com.hoggen.sublimation.proto.MessageModel.YLMessageModel.getDefaultInstance()) return this;
         if (other.hasFromUser()) {
           mergeFromUser(other.getFromUser());
         }
@@ -1767,6 +1847,10 @@ public final class MessageModel {
           token_ = other.token_;
           onChanged();
         }
+        if (!other.getMessageId().isEmpty()) {
+          messageId_ = other.messageId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1780,11 +1864,11 @@ public final class MessageModel {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        YLMessageModel parsedMessage = null;
+        com.hoggen.sublimation.proto.MessageModel.YLMessageModel parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (YLMessageModel) e.getUnfinishedMessage();
+          parsedMessage = (com.hoggen.sublimation.proto.MessageModel.YLMessageModel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1794,9 +1878,9 @@ public final class MessageModel {
         return this;
       }
 
-      private YLUserModel fromUser_ = null;
+      private com.hoggen.sublimation.proto.MessageModel.YLUserModel fromUser_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          YLUserModel, YLUserModel.Builder, YLUserModelOrBuilder> fromUserBuilder_;
+          com.hoggen.sublimation.proto.MessageModel.YLUserModel, com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder, com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder> fromUserBuilder_;
       /**
        * <pre>
        *发送人
@@ -1814,9 +1898,9 @@ public final class MessageModel {
        *
        * <code>.YLUserModel fromUser = 1;</code>
        */
-      public YLUserModel getFromUser() {
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModel getFromUser() {
         if (fromUserBuilder_ == null) {
-          return fromUser_ == null ? YLUserModel.getDefaultInstance() : fromUser_;
+          return fromUser_ == null ? com.hoggen.sublimation.proto.MessageModel.YLUserModel.getDefaultInstance() : fromUser_;
         } else {
           return fromUserBuilder_.getMessage();
         }
@@ -1828,7 +1912,7 @@ public final class MessageModel {
        *
        * <code>.YLUserModel fromUser = 1;</code>
        */
-      public Builder setFromUser(YLUserModel value) {
+      public Builder setFromUser(com.hoggen.sublimation.proto.MessageModel.YLUserModel value) {
         if (fromUserBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1849,7 +1933,7 @@ public final class MessageModel {
        * <code>.YLUserModel fromUser = 1;</code>
        */
       public Builder setFromUser(
-          YLUserModel.Builder builderForValue) {
+          com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder builderForValue) {
         if (fromUserBuilder_ == null) {
           fromUser_ = builderForValue.build();
           onChanged();
@@ -1866,11 +1950,11 @@ public final class MessageModel {
        *
        * <code>.YLUserModel fromUser = 1;</code>
        */
-      public Builder mergeFromUser(YLUserModel value) {
+      public Builder mergeFromUser(com.hoggen.sublimation.proto.MessageModel.YLUserModel value) {
         if (fromUserBuilder_ == null) {
           if (fromUser_ != null) {
             fromUser_ =
-              YLUserModel.newBuilder(fromUser_).mergeFrom(value).buildPartial();
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel.newBuilder(fromUser_).mergeFrom(value).buildPartial();
           } else {
             fromUser_ = value;
           }
@@ -1906,7 +1990,7 @@ public final class MessageModel {
        *
        * <code>.YLUserModel fromUser = 1;</code>
        */
-      public YLUserModel.Builder getFromUserBuilder() {
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder getFromUserBuilder() {
         
         onChanged();
         return getFromUserFieldBuilder().getBuilder();
@@ -1918,12 +2002,12 @@ public final class MessageModel {
        *
        * <code>.YLUserModel fromUser = 1;</code>
        */
-      public YLUserModelOrBuilder getFromUserOrBuilder() {
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder getFromUserOrBuilder() {
         if (fromUserBuilder_ != null) {
           return fromUserBuilder_.getMessageOrBuilder();
         } else {
           return fromUser_ == null ?
-              YLUserModel.getDefaultInstance() : fromUser_;
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel.getDefaultInstance() : fromUser_;
         }
       }
       /**
@@ -1934,11 +2018,11 @@ public final class MessageModel {
        * <code>.YLUserModel fromUser = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          YLUserModel, YLUserModel.Builder, YLUserModelOrBuilder>
+          com.hoggen.sublimation.proto.MessageModel.YLUserModel, com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder, com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder> 
           getFromUserFieldBuilder() {
         if (fromUserBuilder_ == null) {
           fromUserBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              YLUserModel, YLUserModel.Builder, YLUserModelOrBuilder>(
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel, com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder, com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder>(
                   getFromUser(),
                   getParentForChildren(),
                   isClean());
@@ -1947,9 +2031,9 @@ public final class MessageModel {
         return fromUserBuilder_;
       }
 
-      private YLUserModel toUser_ = null;
+      private com.hoggen.sublimation.proto.MessageModel.YLUserModel toUser_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          YLUserModel, YLUserModel.Builder, YLUserModelOrBuilder> toUserBuilder_;
+          com.hoggen.sublimation.proto.MessageModel.YLUserModel, com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder, com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder> toUserBuilder_;
       /**
        * <pre>
        *送达人
@@ -1967,9 +2051,9 @@ public final class MessageModel {
        *
        * <code>.YLUserModel toUser = 2;</code>
        */
-      public YLUserModel getToUser() {
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModel getToUser() {
         if (toUserBuilder_ == null) {
-          return toUser_ == null ? YLUserModel.getDefaultInstance() : toUser_;
+          return toUser_ == null ? com.hoggen.sublimation.proto.MessageModel.YLUserModel.getDefaultInstance() : toUser_;
         } else {
           return toUserBuilder_.getMessage();
         }
@@ -1981,7 +2065,7 @@ public final class MessageModel {
        *
        * <code>.YLUserModel toUser = 2;</code>
        */
-      public Builder setToUser(YLUserModel value) {
+      public Builder setToUser(com.hoggen.sublimation.proto.MessageModel.YLUserModel value) {
         if (toUserBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2002,7 +2086,7 @@ public final class MessageModel {
        * <code>.YLUserModel toUser = 2;</code>
        */
       public Builder setToUser(
-          YLUserModel.Builder builderForValue) {
+          com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder builderForValue) {
         if (toUserBuilder_ == null) {
           toUser_ = builderForValue.build();
           onChanged();
@@ -2019,11 +2103,11 @@ public final class MessageModel {
        *
        * <code>.YLUserModel toUser = 2;</code>
        */
-      public Builder mergeToUser(YLUserModel value) {
+      public Builder mergeToUser(com.hoggen.sublimation.proto.MessageModel.YLUserModel value) {
         if (toUserBuilder_ == null) {
           if (toUser_ != null) {
             toUser_ =
-              YLUserModel.newBuilder(toUser_).mergeFrom(value).buildPartial();
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel.newBuilder(toUser_).mergeFrom(value).buildPartial();
           } else {
             toUser_ = value;
           }
@@ -2059,7 +2143,7 @@ public final class MessageModel {
        *
        * <code>.YLUserModel toUser = 2;</code>
        */
-      public YLUserModel.Builder getToUserBuilder() {
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder getToUserBuilder() {
         
         onChanged();
         return getToUserFieldBuilder().getBuilder();
@@ -2071,12 +2155,12 @@ public final class MessageModel {
        *
        * <code>.YLUserModel toUser = 2;</code>
        */
-      public YLUserModelOrBuilder getToUserOrBuilder() {
+      public com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder getToUserOrBuilder() {
         if (toUserBuilder_ != null) {
           return toUserBuilder_.getMessageOrBuilder();
         } else {
           return toUser_ == null ?
-              YLUserModel.getDefaultInstance() : toUser_;
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel.getDefaultInstance() : toUser_;
         }
       }
       /**
@@ -2087,11 +2171,11 @@ public final class MessageModel {
        * <code>.YLUserModel toUser = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          YLUserModel, YLUserModel.Builder, YLUserModelOrBuilder>
+          com.hoggen.sublimation.proto.MessageModel.YLUserModel, com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder, com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder> 
           getToUserFieldBuilder() {
         if (toUserBuilder_ == null) {
           toUserBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              YLUserModel, YLUserModel.Builder, YLUserModelOrBuilder>(
+              com.hoggen.sublimation.proto.MessageModel.YLUserModel, com.hoggen.sublimation.proto.MessageModel.YLUserModel.Builder, com.hoggen.sublimation.proto.MessageModel.YLUserModelOrBuilder>(
                   getToUser(),
                   getParentForChildren(),
                   isClean());
@@ -2138,7 +2222,7 @@ public final class MessageModel {
         return this;
       }
 
-      private Object textString_ = "";
+      private java.lang.Object textString_ = "";
       /**
        * <pre>
        *消息字符
@@ -2146,16 +2230,16 @@ public final class MessageModel {
        *
        * <code>string textString = 4;</code>
        */
-      public String getTextString() {
-        Object ref = textString_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getTextString() {
+        java.lang.Object ref = textString_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           textString_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2167,11 +2251,11 @@ public final class MessageModel {
        */
       public com.google.protobuf.ByteString
           getTextStringBytes() {
-        Object ref = textString_;
+        java.lang.Object ref = textString_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           textString_ = b;
           return b;
         } else {
@@ -2186,7 +2270,7 @@ public final class MessageModel {
        * <code>string textString = 4;</code>
        */
       public Builder setTextString(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2227,7 +2311,7 @@ public final class MessageModel {
         return this;
       }
 
-      private Object messageSource_ = "";
+      private java.lang.Object messageSource_ = "";
       /**
        * <pre>
        *消息资源地址（如图片、视频、文件）
@@ -2235,16 +2319,16 @@ public final class MessageModel {
        *
        * <code>string messageSource = 5;</code>
        */
-      public String getMessageSource() {
-        Object ref = messageSource_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMessageSource() {
+        java.lang.Object ref = messageSource_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           messageSource_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2256,11 +2340,11 @@ public final class MessageModel {
        */
       public com.google.protobuf.ByteString
           getMessageSourceBytes() {
-        Object ref = messageSource_;
+        java.lang.Object ref = messageSource_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           messageSource_ = b;
           return b;
         } else {
@@ -2275,7 +2359,7 @@ public final class MessageModel {
        * <code>string messageSource = 5;</code>
        */
       public Builder setMessageSource(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2395,7 +2479,7 @@ public final class MessageModel {
         return this;
       }
 
-      private Object token_ = "";
+      private java.lang.Object token_ = "";
       /**
        * <pre>
        *token
@@ -2403,16 +2487,16 @@ public final class MessageModel {
        *
        * <code>string token = 8;</code>
        */
-      public String getToken() {
-        Object ref = token_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           token_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2424,11 +2508,11 @@ public final class MessageModel {
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
-        Object ref = token_;
+        java.lang.Object ref = token_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           token_ = b;
           return b;
         } else {
@@ -2443,7 +2527,7 @@ public final class MessageModel {
        * <code>string token = 8;</code>
        */
       public Builder setToken(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2483,6 +2567,95 @@ public final class MessageModel {
         onChanged();
         return this;
       }
+
+      private java.lang.Object messageId_ = "";
+      /**
+       * <pre>
+       *token
+       * </pre>
+       *
+       * <code>string messageId = 9;</code>
+       */
+      public java.lang.String getMessageId() {
+        java.lang.Object ref = messageId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          messageId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *token
+       * </pre>
+       *
+       * <code>string messageId = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageIdBytes() {
+        java.lang.Object ref = messageId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          messageId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *token
+       * </pre>
+       *
+       * <code>string messageId = 9;</code>
+       */
+      public Builder setMessageId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        messageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *token
+       * </pre>
+       *
+       * <code>string messageId = 9;</code>
+       */
+      public Builder clearMessageId() {
+        
+        messageId_ = getDefaultInstance().getMessageId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *token
+       * </pre>
+       *
+       * <code>string messageId = 9;</code>
+       */
+      public Builder setMessageIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        messageId_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -2498,12 +2671,12 @@ public final class MessageModel {
     }
 
     // @@protoc_insertion_point(class_scope:YLMessageModel)
-    private static final YLMessageModel DEFAULT_INSTANCE;
+    private static final com.hoggen.sublimation.proto.MessageModel.YLMessageModel DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new YLMessageModel();
+      DEFAULT_INSTANCE = new com.hoggen.sublimation.proto.MessageModel.YLMessageModel();
     }
 
-    public static YLMessageModel getDefaultInstance() {
+    public static com.hoggen.sublimation.proto.MessageModel.YLMessageModel getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2521,12 +2694,12 @@ public final class MessageModel {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<YLMessageModel> getParserForType() {
       return PARSER;
     }
 
-    public YLMessageModel getDefaultInstanceForType() {
+    public com.hoggen.sublimation.proto.MessageModel.YLMessageModel getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2550,16 +2723,16 @@ public final class MessageModel {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\024YLMessageModel.proto\";\n\013YLUserModel\022\016\n" +
       "\006userId\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006avatar\030\003 " +
-      "\001(\t\"\305\001\n\016YLMessageModel\022\036\n\010fromUser\030\001 \001(\013" +
+      "\001(\t\"\330\001\n\016YLMessageModel\022\036\n\010fromUser\030\001 \001(\013" +
       "2\014.YLUserModel\022\034\n\006toUser\030\002 \001(\0132\014.YLUserM" +
       "odel\022\023\n\013messageType\030\003 \001(\r\022\022\n\ntextString\030" +
       "\004 \001(\t\022\025\n\rmessageSource\030\005 \001(\t\022\023\n\013voiceLen" +
       "gth\030\006 \001(\r\022\021\n\tvoiceData\030\007 \001(\014\022\r\n\005token\030\010 " +
-      "\001(\tB,\n\034com.hoggen.sublimation.protoB\014Mes" +
-      "sageModelb\006proto3"
+      "\001(\t\022\021\n\tmessageId\030\t \001(\tB,\n\034com.hoggen.sub" +
+      "limation.protoB\014MessageModelb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2578,13 +2751,13 @@ public final class MessageModel {
     internal_static_YLUserModel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_YLUserModel_descriptor,
-        new String[] { "UserId", "Name", "Avatar", });
+        new java.lang.String[] { "UserId", "Name", "Avatar", });
     internal_static_YLMessageModel_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_YLMessageModel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_YLMessageModel_descriptor,
-        new String[] { "FromUser", "ToUser", "MessageType", "TextString", "MessageSource", "VoiceLength", "VoiceData", "Token", });
+        new java.lang.String[] { "FromUser", "ToUser", "MessageType", "TextString", "MessageSource", "VoiceLength", "VoiceData", "Token", "MessageId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

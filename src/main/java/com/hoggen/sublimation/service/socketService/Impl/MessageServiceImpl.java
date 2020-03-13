@@ -34,7 +34,7 @@ public class MessageServiceImpl implements MessageService {
 
         try {
             MessageModel.YLMessageModel model = MessageModel.YLMessageModel.parseFrom(bytes);
-            System.out.println("  userid  " + model.getFromUser().getUserId() + "  内容  "+ model.getTextString());
+           // System.out.println("  userid  " + model.getFromUser().getUserId() + "  消息id  "+ model.getMessageId());
             String  userId =  model.getFromUser().getUserId();
 
             MessageModel.YLMessageModel.Builder builder =  MessageModel.YLMessageModel.newBuilder();
