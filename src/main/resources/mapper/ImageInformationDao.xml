@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.hoggen.sublimation.dao.ImageInformationDao">
+
+
+    <insert id="insertImageInformation" parameterType="com.hoggen.sublimation.entity.ImageInformation"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+
+        <selectKey  keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select uuid()
+        </selectKey>
+        INSERT INTO
+        image_information(
+        id,
+        create_date,
+        file_name,
+        file_path,
+        former_name,
+        object_id,
+        prefix,
+        last_modified_date)
+        VALUES
+        (#{id},#{createDate},#{fileName},#{filePath},#{formerName},#{objectId},#{prefix},#{lastModifiedDate})
+    </insert>
+
+    <select id="queryByImageId" resultType="com.hoggen.sublimation.entity.ImageInformation" parameterType="String">
+        SELECT
+        id,
+        create_date,
+        file_name,
+        file_path,
+        former_name,
+        create_date,
+        object_id,
+        prefix,
+        last_modified_date
+        FROM
+        image_information
+        WHERE
+		id = #{imageId}
+    </select>
+
+
+    <update id="updateImageInformation" parameterType="com.hoggen.sublimation.entity.ImageInformation"
+            keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+        UPDATE image_information
+        <set>
+            <if test="fileName!=null ">file_name=#{fileName},</if>
+            <if test="filePath!=null ">file_path=#{filePath},</if>
+            <if test="formerName!=null ">former_name=#{formerName},</if>
+            <if test="objectId!=null ">object_id=#{objectId},</if>
+            <if test="prefix!=null ">prefix=#{prefix},</if>
+            <if test="lastModifiedDate=null ">last_modified_date=#{lastModifiedDate},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+
+</mapper>

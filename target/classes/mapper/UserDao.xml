@@ -13,7 +13,6 @@
 <!--        <result column="driver_id" property="driverId" />-->
 <!--    </resultMap>-->
 
-
     <select id="queryByUserPhone" resultType="com.hoggen.sublimation.entity.User" parameterType="String">
         SELECT
         user_id,

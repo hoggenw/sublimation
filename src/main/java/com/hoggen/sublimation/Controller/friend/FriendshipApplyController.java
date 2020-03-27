@@ -135,6 +135,7 @@ public class FriendshipApplyController {
         Map<String, Object> modelMap = new HashMap<String, Object>();
         String userId = request.getHeader("userId");
         FriendshipApply friendshipApply = applyService.queryFriendshipApply(apply.getId());
+
         if (friendshipApply == null ){
             return ResponedUtils.returnCode(UserStateEnum.FRIENDSHIPEMPTY.getState(),UserStateEnum.FRIENDSHIPEMPTY.getStateInfo(),modelMap);
         }

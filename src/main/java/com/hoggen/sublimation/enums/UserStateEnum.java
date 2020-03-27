@@ -24,8 +24,10 @@ public enum UserStateEnum {
     FRIENDSHIPILLEGAL(10018, "用户角色非法"),
     FRIENDSHIPBLACKALLREADY(10019, "该用户已经在您的黑名单中,或者你已经在对方黑名单中"),
     APPLYINFOREERO(10020, "请检查申请参数是否正确"),
-    BLACKNULL(10021, "不在黑名单中");
-
+    BLACKNULL(10021, "不在黑名单中"),
+    FILLNULL(10022, "文件不能为空"),
+    FILETYPEUNKONWE(10023, "文件类型未知"),
+    FILEUPDATENONE(10024, "更新文件不存在");
     private int state;
 
     private String stateInfo;
