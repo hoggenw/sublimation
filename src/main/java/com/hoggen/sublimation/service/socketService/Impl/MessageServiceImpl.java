@@ -60,8 +60,6 @@ public class MessageServiceImpl implements MessageService {
                 }
 
 
-
-
             }else {
                 log.info("该账户不在线");
             }
