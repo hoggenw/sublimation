@@ -1,6 +1,7 @@
 package com.hoggen.sublimation.Controller.login;
 
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.hoggen.sublimation.dto.*;
 import com.hoggen.sublimation.entity.FriendshipApply;
 import com.hoggen.sublimation.entity.User;
@@ -11,6 +12,7 @@ import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
 import com.hoggen.sublimation.service.httpsevice.LoginService;
 import com.hoggen.sublimation.service.httpsevice.UserService;
 import com.hoggen.sublimation.util.*;
+import com.yx.ywq.service.YwqService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -54,6 +56,9 @@ public class LoginController {
 
      @Autowired
      private FriendshipApplyService applyService;
+
+
+
     @Autowired
     private RedisService redisService;
 
