@@ -12,4 +12,11 @@ public interface CmdEnum {
      *  检测未登录状态
      */
     short MISS_LOGIN = 10086;
+
+    /**
+     *  消息发送成功
+     */
+    short MESSAGE_SUCCESS= 2;
+
+
 }

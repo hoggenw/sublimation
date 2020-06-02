@@ -3,7 +3,11 @@ package com.hoggen.sublimation.util.NettyHandler;
 import com.hoggen.sublimation.Scanner.Invoker;
 import com.hoggen.sublimation.Scanner.InvokerHoler;
 import com.hoggen.sublimation.entity.ChannelSession;
+import com.hoggen.sublimation.enums.CmdEnum;
+import com.hoggen.sublimation.enums.ModuleEnum;
+import com.hoggen.sublimation.enums.SocketTitle;
 import com.hoggen.sublimation.proto.BaseMessageModel;
+import com.hoggen.sublimation.proto.MessageModel;
 import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
 import com.hoggen.sublimation.util.SocketResponseUtil;
 import io.netty.buffer.ByteBuf;
@@ -205,7 +209,6 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                     channelMap.put(userId,saveChannel);
                     logger.info("剩余客户端+：{}", channelMap.size());
                     customTextFrameHandler.redisService.set(ctx.channel().id().toString(),userId);
-
                 }
 
 
@@ -252,8 +255,6 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                     ctx.close();
                     ctx.channel().close();
                 }
-
-
                 //  ctx.channel().close();
                 // 将数据写入通道
 //                ctx.channel().writeAndFlush(new TextWebSocketFrame(body));
@@ -311,6 +312,8 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 System.out.println("  包头  " + baseModel.getTitle() + "  模块  " + baseModel.getModule() + "  命令  " + baseModel.getCommand());
                 Invoker invoker = InvokerHoler.getInvoker((short) baseModel.getModule(), (short) baseModel.getCommand());
 
+                MessageReceived(baseModel.getData());
+
                 if (invoker != null) {
                     invoker.invoke(baseModel.getData());
                   //  ctx.channel().writeAndFlush(new BinaryWebSocketFrame(buf2));
@@ -334,6 +337,30 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
 //        };
 
 
+
+    }
+
+    private void MessageReceived(com.google.protobuf.ByteString data){
+        BaseMessageModel.YLBaseMessageModel.Builder baseBuilder = BaseMessageModel.YLBaseMessageModel.newBuilder();
+        baseBuilder.setTitle(SocketTitle.SocketTitle).setModule(ModuleEnum.BACK_MESSAGE_MODULE).setCommand(CmdEnum.MESSAGE_SUCCESS).setData(data);
+        ByteBuf buf2 = Unpooled.wrappedBuffer(baseBuilder.build().toByteArray());
+        //判断是否在线，在线则发送，不在线存储及推送；
+        try {
+            MessageModel.YLMessageModel model = MessageModel.YLMessageModel.parseFrom(data);
+            // System.out.println("  userid  " + model.getFromUser().getUserId() + "  消息id  "+ model.getMessageId());
+            String  userId =  model.getFromUser().getUserId();
+
+            Channel channal = (Channel)channelMap.get(userId);
+            if (channal != null){
+                channal.writeAndFlush(new BinaryWebSocketFrame(buf2));
+            }else {
+                ByteBuf byteBuf  = SocketResponseUtil.creatOotLoginResponse(userId);
+                channal.writeAndFlush(new BinaryWebSocketFrame(byteBuf));
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 

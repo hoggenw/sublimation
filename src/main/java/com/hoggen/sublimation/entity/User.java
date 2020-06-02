@@ -3,11 +3,12 @@ package com.hoggen.sublimation.entity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @Accessors(chain = true)
-public class User {
+public class User implements Serializable {
 
     // ID
     private String userId;

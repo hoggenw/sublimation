@@ -3,8 +3,13 @@ package com.hoggen.sublimation.dto;
 
 import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.UserStateEnum;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
-public class UserExecution {
+import java.io.Serializable;
+@Data
+@Accessors(chain = true)
+public class UserExecution  implements Serializable {
 
     public int getState() {
         return state;

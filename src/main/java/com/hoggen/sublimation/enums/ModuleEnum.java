@@ -7,4 +7,9 @@ public interface ModuleEnum {
      */
     short COMMON_MODULE = 101;
 
+    /**
+     *  聊天模型 消息接收成功返回模型
+     */
+    short BACK_MESSAGE_MODULE = 201;
+
 }
