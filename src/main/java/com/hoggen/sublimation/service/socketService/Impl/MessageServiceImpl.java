@@ -34,15 +34,9 @@ public class MessageServiceImpl implements MessageService {
 
         try {
             MessageModel.YLMessageModel model = MessageModel.YLMessageModel.parseFrom(bytes);
-           // System.out.println("  userid  " + model.getFromUser().getUserId() + "  消息id  "+ model.getMessageId());
             String  userId =  model.getFromUser().getUserId();
-
-            MessageModel.YLMessageModel.Builder builder =  MessageModel.YLMessageModel.newBuilder();
-            builder.setTextString(model.getTextString()).setMessageType(2).setFromUser(model.getFromUser());
-            MessageModel.YLMessageModel model2 = builder.build();
-
             BaseMessageModel.YLBaseMessageModel.Builder baseBuilder = BaseMessageModel.YLBaseMessageModel.newBuilder();
-            baseBuilder.setTitle(SocketTitle.SocketTitle).setModule(ModuleEnum.COMMON_MODULE).setCommand(CmdEnum.PERSON_TO_PERSON).setData(model2.toByteString());
+            baseBuilder.setTitle(SocketTitle.SocketTitle).setModule(ModuleEnum.COMMON_MODULE).setCommand(CmdEnum.PERSON_TO_PERSON).setData(bytes);
 
 
 
