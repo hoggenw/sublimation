@@ -1,18 +1,19 @@
 package com.hoggen.sublimation.Controller.friend;
 
 
-import com.hoggen.sublimation.dto.FriendshipDTO;
-import com.hoggen.sublimation.dto.UpdateUserCategoryDTO;
-import com.hoggen.sublimation.entity.BlackFriendship;
-import com.hoggen.sublimation.entity.FriendshipApply;
-import com.hoggen.sublimation.enums.UserStateEnum;
-import com.hoggen.sublimation.service.httpsevice.FriendshipApplyService;
-import com.hoggen.sublimation.service.httpsevice.BlackFriendshipService;
+
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.hoggen.sublimation.util.ResponedUtils;
+import dto.FriendshipDTO;
+import dto.UpdateUserCategoryDTO;
+import entity.BlackFriendship;
+import entity.FriendshipApply;
+import enums.UserStateEnum;
+import httpsevice.BlackFriendshipService;
+import httpsevice.FriendshipApplyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -28,10 +29,10 @@ import java.util.Map;
 @Api(tags = "用户关系模块")
 @Slf4j
 public class FriendshipApplyController {
-    @Autowired
+    @Reference
     private FriendshipApplyService applyService;
 
-    @Autowired
+    @Reference
     private BlackFriendshipService blackFriendshipService;
 
 

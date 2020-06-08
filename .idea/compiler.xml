@@ -57,9 +57,16 @@
         </processorPath>
         <module name="sublimation" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="sublimation_api" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="sublimation" target="1.8" />
+      <module name="sublimation_api" target="1.6" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

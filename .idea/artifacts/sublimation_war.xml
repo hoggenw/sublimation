@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="sublimation-0.0.1-SNAPSHOT.war">
+    <root id="archive" name="sublimation_customer-1.0.0.war">
       <element id="artifact" artifact-name="sublimation:war exploded" />
     </root>
   </artifact>

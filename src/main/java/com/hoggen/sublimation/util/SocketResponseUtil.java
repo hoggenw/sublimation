@@ -1,10 +1,11 @@
 package com.hoggen.sublimation.util;
 
-import com.hoggen.sublimation.enums.CmdEnum;
-import com.hoggen.sublimation.enums.ModuleEnum;
-import com.hoggen.sublimation.enums.SocketTitle;
+
 import com.hoggen.sublimation.proto.BaseMessageModel;
 import com.hoggen.sublimation.proto.MessageModel;
+import enums.CmdEnum;
+import enums.ModuleEnum;
+import enums.SocketTitle;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 

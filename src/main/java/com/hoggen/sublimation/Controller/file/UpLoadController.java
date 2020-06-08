@@ -1,11 +1,13 @@
 package com.hoggen.sublimation.Controller.file;
 
-import com.hoggen.sublimation.entity.ImageInformation;
-import com.hoggen.sublimation.enums.UpLoadEnum;
-import com.hoggen.sublimation.enums.UserStateEnum;
-import com.hoggen.sublimation.service.httpsevice.ImageInformationService;
+
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.hoggen.sublimation.util.ResponedUtils;
 
+import entity.ImageInformation;
+import enums.UpLoadEnum;
+import enums.UserStateEnum;
+import httpsevice.ImageInformationService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -92,7 +94,8 @@ public class UpLoadController {
 
     @Autowired private Auth auth;
 
-    @Autowired private ImageInformationService imageInformationService;
+    @Reference
+    private ImageInformationService imageInformationService;
 
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)

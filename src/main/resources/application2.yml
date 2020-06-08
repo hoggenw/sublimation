@@ -3,7 +3,7 @@ custom:
 jdbc:
   driver: com.mysql.cj.jdbc.Driver
   password: Vx4uJc2qZfJJnjkHs26fsw==
-  url: jdbc:mysql://49.235.149.115:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+  url: jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
   username: WnplV/ietfQ=
 logging:
   config: classpath:logback.xml
@@ -29,7 +29,7 @@ spring:
     timeout: 15000
   redis:
     database: 6
-    host: 49.235.149.115
+    host: 127.0.0.1
     password: Xinjin_611430
     pool:
       max-active: 1000
@@ -41,13 +41,13 @@ spring:
   dubbo:
     base-package: com.hoggen.sublimation.*.httpsevice
     application:
-      name: customer2
+      name: customer
     registry:
-      address: zookeeper://49.235.149.115
+      address: zookeeper://127.0.0.1
       port: 2181
     protocol:
       name: dubbo
-      port: 20698
+      port: 20798
     provider:
       retries: 0
       timeout: 60000

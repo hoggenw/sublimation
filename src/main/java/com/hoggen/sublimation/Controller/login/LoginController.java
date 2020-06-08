@@ -2,22 +2,22 @@ package com.hoggen.sublimation.Controller.login;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.hoggen.sublimation.dto.*;
-import com.hoggen.sublimation.entity.FriendshipApply;
-import com.hoggen.sublimation.entity.User;
-import com.hoggen.sublimation.enums.LoginStateEnum;
-import com.hoggen.sublimation.enums.UserStateEnum;
-import com.hoggen.sublimation.service.httpsevice.FriendshipApplyService;
-import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
-import com.hoggen.sublimation.service.httpsevice.LoginService;
-import com.hoggen.sublimation.service.httpsevice.UserService;
 import com.hoggen.sublimation.util.*;
-import com.yx.ywq.service.YwqService;
+
+import dto.*;
+import entity.FriendshipApply;
+import entity.User;
+import enums.LoginStateEnum;
+import enums.UserStateEnum;
+import httpsevice.FriendshipApplyService;
+import httpsevice.LoginService;
+import httpsevice.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -45,22 +45,18 @@ import sun.misc.BASE64Encoder;
 public class LoginController {
 
 
-    @Autowired
+    @Reference
     private LoginService loginService;
 
-    @Autowired
+    @Reference
     private UserService userService;
 
     @Autowired
     private Producer captchaProducer;
 
-     @Autowired
+     @Reference
      private FriendshipApplyService applyService;
 
-
-
-    @Autowired
-    private RedisService redisService;
 
 
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
