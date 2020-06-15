@@ -41,7 +41,7 @@ spring:
   dubbo:
     base-package: com.hoggen.sublimation.*.httpsevice
     application:
-      name: customer
+      name: customer-prod
     registry:
       address: zookeeper://127.0.0.1
       port: 2181
