@@ -77,3 +77,11 @@ upload-config:
   user-portrait-path: ihosdev/userportrait
 
 
+xxl-job:
+  enable: true
+  admin:
+    address: http://127.0.0.1:5999/xxl-job-admin
+  executor:
+    appname: sublimation-xxl
+    port: 59992
+    logpath: ./xxlLogs

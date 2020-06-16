@@ -76,4 +76,11 @@ upload-config:
   return-visit-path: ihosdev/returnvisit
   user-portrait-path: ihosdev/userportrait
 
-
+xxl-job:
+  enable: true
+  admin:
+    address: http://49.235.149.115:5999/xxl-job-admin
+  executor:
+    appname: sublimation-xxl
+    port: 59991
+    logpath: ./xxlLogs
