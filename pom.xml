@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>hoggen</groupId>
 			<artifactId>sublimation_api</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.5</version>
 		</dependency>
 		<!--七牛云 服务-->
 		<dependency>
