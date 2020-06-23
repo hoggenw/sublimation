@@ -14,7 +14,12 @@
           <element id="module-output" name="sublimation" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: hoggen:sublimation_api:1.0.5" />
+          <element id="archive" name="sublimation_api-1.0.6.jar">
+            <element id="module-output" name="sublimation_api" />
+          </element>
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.19" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:9.0.19" />
+          <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" />
           <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.2.28" />
           <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.14.4" />
           <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.17.2" />
