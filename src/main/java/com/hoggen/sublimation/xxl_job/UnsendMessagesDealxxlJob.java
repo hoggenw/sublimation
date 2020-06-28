@@ -33,6 +33,8 @@ public class UnsendMessagesDealxxlJob {
         Date start = c.getTime();
 
         int reult = unsendMessageService.deleteMessages(start);
+
+        logger.info("unsendMessage deal reult" + reult);
         if (reult <= 0){
             return FAIL;
         }
