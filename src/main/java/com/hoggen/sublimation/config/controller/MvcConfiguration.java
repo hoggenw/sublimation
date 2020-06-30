@@ -21,6 +21,9 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
     @Autowired
     private TokenInterceptor tokenInterceptor;
 
+    @Autowired
+    private IPInterceptor ipInterceptor;
+
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -63,7 +66,12 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
                 .excludePathPatterns("/api/login/userLogin")
                 .excludePathPatterns("/api/login/register")
                 .excludePathPatterns("/api/file/**")
+                .excludePathPatterns("/api/test")
+                .excludePathPatterns("/api/forward")
                 .excludePathPatterns("/api/login/getKaptchaImage");
+
+        registry.addInterceptor(ipInterceptor).addPathPatterns("/api/forward").addPathPatterns("/api/test");
+
 //registry.addInterceptor(kaptchaIntercepyor).addPathPatterns("/api/login/register");
         WebMvcConfigurer.super.addInterceptors(registry);
     }

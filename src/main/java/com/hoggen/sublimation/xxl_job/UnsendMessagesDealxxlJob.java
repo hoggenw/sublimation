@@ -4,7 +4,6 @@ package com.hoggen.sublimation.xxl_job;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.annotation.XxlJob;
-import httpsevice.FriendshipApplyService;
 import httpsevice.UnsendMessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

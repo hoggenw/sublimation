@@ -14,7 +14,7 @@
           <element id="module-output" name="sublimation" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="sublimation_api-1.0.6.jar">
+          <element id="archive" name="sublimation_api-1.1.0.jar">
             <element id="module-output" name="sublimation_api" />
           </element>
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.19" />
@@ -74,6 +74,7 @@
           <element id="library" level="project" name="Maven: cglib:cglib-nodep:3.1" />
           <element id="library" level="project" name="Maven: io.netty:netty-all:4.1.6.Final" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.5.1" />
+          <element id="library" level="project" name="Maven: com.googlecode.protobuf-java-format:protobuf-java-format:1.2" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.58" />
           <element id="library" level="project" name="Maven: io.springfox:springfox-swagger2:2.9.2" />
           <element id="library" level="project" name="Maven: io.swagger:swagger-annotations:1.5.20" />
