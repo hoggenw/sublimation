@@ -6,6 +6,7 @@ import com.hoggen.sublimation.util.*;
 
 import dto.*;
 import entity.FriendshipApply;
+import entity.ThirdEvidenceModel;
 import entity.User;
 import enums.LoginStateEnum;
 import enums.UserStateEnum;
@@ -20,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -109,10 +111,23 @@ public class LoginController {
 
 
 
-
-
-
     }
+
+    @RequestMapping(value = "/pushToken", method = RequestMethod.POST)
+    @ApiOperation(value = "上传或者更新pushToken")
+    @ResponseBody
+    private Map<String, Object> pushToken(HttpServletRequest request)  {
+         String userId = HttpServletRequestUtil.getString(request,"userId");
+        String iphonePushToken = HttpServletRequestUtil.getString(request,"iphonePushToken");
+        if (StringUtils.isEmpty(userId) || StringUtils.isEmpty(iphonePushToken)){
+            return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),"");
+        }
+        ThirdEvidenceModel model = new ThirdEvidenceModel();
+        model.setIphonePushToken(iphonePushToken);
+        model.setUserId(userId);
+        return loginService.pushToken(model);
+    }
+
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ApiOperation(value = "用户注册")
