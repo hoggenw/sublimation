@@ -116,15 +116,12 @@ public class LoginController {
     @RequestMapping(value = "/pushToken", method = RequestMethod.POST)
     @ApiOperation(value = "上传或者更新pushToken")
     @ResponseBody
-    private Map<String, Object> pushToken(HttpServletRequest request)  {
-         String userId = HttpServletRequestUtil.getString(request,"userId");
-        String iphonePushToken = HttpServletRequestUtil.getString(request,"iphonePushToken");
-        if (StringUtils.isEmpty(userId) || StringUtils.isEmpty(iphonePushToken)){
+    private Map<String, Object> pushToken(HttpServletRequest request,@RequestBody ThirdEvidenceModel model)  {
+//        String userId = HttpServletRequestUtil.getString(request,"userId");
+//        String iphonePushToken = HttpServletRequestUtil.getString(request,"iphonePushToken");
+        if (StringUtils.isEmpty(model.getUserId()) || StringUtils.isEmpty(model.getIphonePushToken())){
             return ResponedUtils.returnCode(UserStateEnum.APPLYINFOREERO.getState(),UserStateEnum.APPLYINFOREERO.getStateInfo(),"");
         }
-        ThirdEvidenceModel model = new ThirdEvidenceModel();
-        model.setIphonePushToken(iphonePushToken);
-        model.setUserId(userId);
         return loginService.pushToken(model);
     }
 

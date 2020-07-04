@@ -70,7 +70,7 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
                 .excludePathPatterns("/api/forward")
                 .excludePathPatterns("/api/login/getKaptchaImage");
 
-        registry.addInterceptor(ipInterceptor).addPathPatterns("/api/forward").addPathPatterns("/api/test");
+     //   registry.addInterceptor(ipInterceptor).addPathPatterns("/api/forward").addPathPatterns("/api/test");
 
 //registry.addInterceptor(kaptchaIntercepyor).addPathPatterns("/api/login/register");
         WebMvcConfigurer.super.addInterceptors(registry);
