@@ -24,8 +24,8 @@ public class UnsendMessagesDealxxlJob {
     private static final Logger logger = LoggerFactory.getLogger(UnsendMessagesDealxxlJob.class);
     @XxlJob("UnsendMessagesDealxxlJob")
     public ReturnT<String> UnsendMessagesDealxxlJob(String param) throws Exception {
-
         logger.info("unsendMessage deal ");
+        logger.info(param);
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
         c.add(Calendar.DATE, -1);

@@ -21,10 +21,6 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
     @Autowired
     private TokenInterceptor tokenInterceptor;
 
-    @Autowired
-    private IPInterceptor ipInterceptor;
-
-
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         // TODO Auto-generated method stub
