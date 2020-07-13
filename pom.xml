@@ -12,7 +12,7 @@
 	<artifactId>sublimation_customer</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
-	<name>sublimation</name>
+	<name>ROOT</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>hoggen</groupId>
 			<artifactId>sublimation_api</artifactId>
-			<version>1.1.1</version>
+			<version>1.1.2</version>
 		</dependency>
 		<!--七牛云 服务-->
 		<dependency>

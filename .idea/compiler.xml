@@ -2,7 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for sublimation" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="sublimation_api" />
+      </profile>
+      <profile name="Annotation profile for ROOT" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -56,12 +62,6 @@
           <entry name="$MAVEN_REPOSITORY$/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar" />
         </processorPath>
         <module name="sublimation" />
-      </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="sublimation_api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
