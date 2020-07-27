@@ -180,7 +180,6 @@ public class LoginController {
                 newPasswordUser.setUpdateTime(new Date());
                 UserExecution effect = userService.modifyUser(newPasswordUser);
                 return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),modelMap);
-
             }
             else  {
                 return ResponedUtils.returnCode(LoginStateEnum.OLDPASSWORDERROR.getState(),LoginStateEnum.OLDPASSWORDERROR.getStateInfo(),modelMap);
