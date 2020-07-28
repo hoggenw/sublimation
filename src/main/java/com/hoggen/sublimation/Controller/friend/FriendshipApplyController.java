@@ -216,7 +216,7 @@ public class FriendshipApplyController {
         if ((apply.getUserId().equals(friendshipApply.getUserId()) && apply.getFriendId().equals(friendshipApply.getFriendId()))
         || (apply.getUserId().equals(friendshipApply.getFriendId()) && apply.getFriendId().equals(friendshipApply.getUserId()))){
             friendshipApply.setDeleteStatus(1);
-            int effect = applyService.updateFriendship(friendshipApply);
+            int effect = applyService.deleteFriendship(friendshipApply);
             if (effect < 0){
                 //
                 return ResponedUtils.returnCode(UserStateEnum.INNER_ERROR.getState(),UserStateEnum.INNER_ERROR.getStateInfo(),modelMap);
