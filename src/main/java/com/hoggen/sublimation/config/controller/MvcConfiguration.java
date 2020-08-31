@@ -61,7 +61,6 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
         registry.addInterceptor(tokenInterceptor).addPathPatterns("/api/**")
                 .excludePathPatterns("/api/login/userLogin")
                 .excludePathPatterns("/api/login/register")
-                .excludePathPatterns("/api/file/**")
                 .excludePathPatterns("/api/test")
                 .excludePathPatterns("/api/forward")
                 .excludePathPatterns("/api/login/getKaptchaImage");

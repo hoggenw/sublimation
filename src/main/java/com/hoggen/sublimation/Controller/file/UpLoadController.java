@@ -48,7 +48,7 @@ public class UpLoadController {
 
     @Value("${upload-config.doctor-portrait-path}")
     private String doctorPortraitPath;
-    //    upload-config.doctor-qrcode-path=ihosdev/doctorqrcode
+    //upload-config.doctor-qrcode-path=ihosdev/doctorqrcode
 //    upload-config.nurse-qrcode-path=ihosdev/nurseqrcode
 //    upload-config.coupon-qrcode-path=ihosdev/couponqrcode
 //    upload-config.organization-qrcode-path=ihosdev/organizationqrcode
@@ -96,6 +96,19 @@ public class UpLoadController {
 
     @Reference
     private ImageInformationService imageInformationService;
+
+
+    @RequestMapping(value = "/uploadToken", method = RequestMethod.POST)
+    @ApiOperation(value = "上传图片")
+    @ResponseBody
+    public Map<String, Object> uploadToken() {
+
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        modelMap.put("uploadToken",auth.uploadToken(bucket));
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(), UserStateEnum.SUCCESS.getStateInfo(), modelMap);
+
+    }
+
 
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)

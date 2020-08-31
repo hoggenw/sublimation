@@ -48,7 +48,7 @@ spring:
     protocol:
       name: dubbo
       port: 20698
-      host: 192.168.1.16
+      host: 192.168.1.13
     provider:
       retries: 0
       timeout: 60000
