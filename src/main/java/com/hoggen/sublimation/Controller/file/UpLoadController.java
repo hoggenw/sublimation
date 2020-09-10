@@ -49,9 +49,9 @@ public class UpLoadController {
     @Value("${upload-config.doctor-portrait-path}")
     private String doctorPortraitPath;
     //upload-config.doctor-qrcode-path=ihosdev/doctorqrcode
-//    upload-config.nurse-qrcode-path=ihosdev/nurseqrcode
-//    upload-config.coupon-qrcode-path=ihosdev/couponqrcode
-//    upload-config.organization-qrcode-path=ihosdev/organizationqrcode
+    //upload-config.nurse-qrcode-path=ihosdev/nurseqrcode
+    //upload-config.coupon-qrcode-path=ihosdev/couponqrcode
+    //upload-config.organization-qrcode-path=ihosdev/organizationqrcode
     @Value("${upload-config.user-portrait-path}")
     private String userPath;
 
